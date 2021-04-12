@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <Header title = "Home" username = "User23" logOut = {logOut}/>
+      <Header title = "Home" username = "User23" logOut = {logOut} />
     </div>
   )
 }
