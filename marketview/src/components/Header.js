@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './Navbar'
 
 
 function Header({ title, username, logOut }) {
@@ -9,7 +8,6 @@ function Header({ title, username, logOut }) {
             <h1 className = {"headerTitle"}>{title}</h1>
             <button className = {"logOutButton"} onClick = {logOut}>Log Out</button>
             <h5 className ={"loggedInMessage"}>Logged In: {username}</h5>
-            <Navbar />
         </div>
     )
 }
