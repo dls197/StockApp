@@ -4,15 +4,16 @@ import News from './components/News'
 import Stocks from './components/Stocks'
 import MyProfile from './components/MyProfile'
 import Social from './components/Social'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
 
 function App() {
-
+  const finnhubApiKey = process.env.REACT_APP_FINNHUB_API_KEY;
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userThatIsLoggedIn, setUserThatIsLoggedIn] = useState("User23")
+  const [userThatIsLoggedIn, setUserThatIsLoggedIn] = useState("User23");
+  const [newsData, setNewsData] = useState([]); //variable to store newsData
 
   //func we will eventually use to log the user out, and pass it into header as a prop
   const logOut = () => {
@@ -32,6 +33,17 @@ function App() {
     }
   }
 
+  //API Call for sending news article info
+  const getNewsData = async () => {
+    await fetch(`https://finnhub.io/api/v1/news?category=general&token=${finnhubApiKey}`)
+            .then(Response => Response.json())
+            .then(data => setNewsData(data));
+  }
+  
+  useEffect(() => {
+    getNewsData();
+  }, []);
+
   return (
     <Router>
       <div className = "app">
@@ -50,6 +62,7 @@ function App() {
                                   {...props} 
                                   logout = {logOut} 
                                   username = {userThatIsLoggedIn} 
+                                  newsData = {newsData} 
                                 />}
           />
           <Route 
