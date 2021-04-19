@@ -1,0 +1,18 @@
+.searchContainer {
+    margin: 36px auto;
+    width: 100%;
+    max-width: 800px;
+} 
+
+.inputBox {
+    position: relative;
+}
+
+.searchContainer input {
+    width: 50%;
+    padding: 16px;
+    font-size: 36 px;
+    font-style: italic;
+    box-sizing: border-box;
+    outline: none;
+}
