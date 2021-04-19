@@ -22,7 +22,7 @@ function Stocks({ logOut, username }) {
                             setSearchTerm(event.target.value)
                          }}
                      />
-                        <i class="fa fa-search" aria-hidden="true"/>
+                        <i className = {"fa fa-search searchIcon"} aria-hidden="true"/>
                     </div>
                 </div>
             </body>
