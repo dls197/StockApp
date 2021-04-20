@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import '../css/Stocks.css';
+import './StockModal'
+import StockModal from './StockModal';
 
 
 function Stocks({ logOut, username }) {
@@ -38,7 +40,7 @@ function Stocks({ logOut, username }) {
                 setXValues(futureXVals)
                 setYValues(futureYVals)
             })
-    
+        setShowStockModal(true)
     }
 
 
@@ -58,6 +60,13 @@ function Stocks({ logOut, username }) {
                         <i className = {"fa fa-search searchIcon"} aria-hidden="true"/>
                     </div>
                 </div>
+            <StockModal
+                xValues = {xValues}
+                yValues = {yValues}
+                showStockModal = {showStockModal}
+                setShowStockModal = {setShowStockModal}
+                tickerSymbol = {searchTerm}
+            />
         </div>
     )
 }
