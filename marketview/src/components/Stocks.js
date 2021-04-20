@@ -12,7 +12,6 @@ function Stocks({ logOut, username }) {
         <div>
             <Header title = "Stocks" username = {username} logOut = {logOut} />
             <Navbar />
-            <body>
                 <div className = {"searchContainer"}>
                     <div className = {"inputBox"}>
                       <input
@@ -25,7 +24,6 @@ function Stocks({ logOut, username }) {
                         <i className = {"fa fa-search searchIcon"} aria-hidden="true"/>
                     </div>
                 </div>
-            </body>
         </div>
     )
 }
