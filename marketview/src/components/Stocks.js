@@ -19,31 +19,29 @@ function Stocks({ logOut, username }) {
 
     //fetch the stock data whenever the state changes
     useEffect(() => {
-        fetchStock()
+        function fetchStock() {
+            const apiKey = "BFW1POG1RFAENYS8"
+            let tickerSymbol = searchTerm
+            let apiCall = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${tickerSymbol}&outputsize=compact&apikey=${apiKey}`
+            let futureXVals = [];
+            let futureYVals = [];
+    
+            fetch(apiCall)
+                .then(response => response.json())
+                .then(response => {
+                    for (const item in response['Time Series (Daily)']) {
+                        futureXVals.push(item);
+                        futureYVals.push(response['Time Series (Daily)'][item]['1. open']);
+                    }
+    
+                    setXValues(futureXVals)
+                    setYValues(futureYVals)
+                })
+        }
+        fetchStock();
     }, [searchTerm])
 
-    function fetchStock() {
-        const apiKey = "BFW1POG1RFAENYS8"
-        let tickerSymbol = searchTerm
-        let apiCall = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${tickerSymbol}&outputsize=compact&apikey=${apiKey}`
-        let futureXVals = [];
-        let futureYVals = [];
-
-        fetch(apiCall)
-            .then(response => response.json())
-            .then(response => {
-                for (const item in response['Time Series (Daily)']) {
-                    futureXVals.push(item);
-                    futureYVals.push(response['Time Series (Daily)'][item]['1. open']);
-                }
-
-                setXValues(futureXVals)
-                setYValues(futureYVals)
-            })
-        setShowStockModal(true)
-    }
-
-
+    
     return (
         <div>
             <Header title = "Stocks" username = {username} logOut = {logOut} />
