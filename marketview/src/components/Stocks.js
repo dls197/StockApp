@@ -6,6 +6,7 @@ import '../css/Stocks.css';
 
 function Stocks({ logOut, username }) {
 
+    //the ticker symbol they search for
     const [searchTerm, setSearchTerm] = useState("");
 
     return (
