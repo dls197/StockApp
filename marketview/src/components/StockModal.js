@@ -1,6 +1,7 @@
 import React from 'react';
 import Plot from 'react-plotly.js';
 import Modal from 'react-modal';
+import '../css/StockModal.css';
 
 Modal.setAppElement('#root')
 
@@ -41,7 +42,7 @@ function StockModal({ xValues, yValues, showStockModal, setShowStockModal, ticke
                             marker: {color: 'red'},
                         }
                         ]}
-                        layout={ {width: 720, height: 440, title: `Ticker Symbol ${tickerSymbol}`} }
+                        layout={ {width: 720, height: 440, title: `Ticker Symbol ${tickerSymbol} Stock Information`} }
                 />
                 <button
                     onClick = {() => setShowStockModal(false)}
