@@ -1,6 +1,6 @@
 .searchContainer {
     margin: 36px auto;
-    width: 100%;
+    width: 70%;
     max-width: 800px;
 } 
 
@@ -18,30 +18,37 @@
     box-sizing: border-box;
     outline: none;
     border-radius: 14px;
+    background-color: rgb(238, 234, 234);
+    margin-right: 20px;
 }
 
 .searchIcon {
     position: absolute;
-    top: 10px;
-    right: 210px;
+    top: 12px;
+    right: 230px;
     font-size: 24px;
     color: #555;
 }
 
 .closeModalButton {
-  display: absolute;
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  margin: 4px 2px;
-  margin-left: 50px;
-  cursor: pointer;
-  border-radius: 50%;    
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 50px;
+    cursor: pointer;
+    border-radius: 50%;    
 }
 
+.searchContainer input.submitButton {
+    position: relative;
+    width: 100px;
+    font-style: normal;
+    background-color: rgb(55, 194, 37);
+}
 
 

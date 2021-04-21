@@ -62,7 +62,7 @@ function Stocks({ logOut, username }) {
                             }}
                         />
                         <i class="fa fa-line-chart searchIcon" aria-hidden="true"></i>
-                        <input type = "submit"/>
+                        <input type = "submit" className = {"submitButton"}/>
                         </div>
                     </form>
                 </div>
