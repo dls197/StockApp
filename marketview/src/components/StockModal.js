@@ -19,14 +19,11 @@ function StockModal({ xValues, yValues, showStockModal, setShowStockModal, ticke
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)'
         }
-      }
+      }  
 
     return (
         <div className = {"stockModal"}>
-            <button 
-                onClick = {() => setShowStockModal(true)} 
-                className = {"viewStockInfoButton"}>View Stock Information
-            </button>
+            
             <Modal
                 isOpen = {showStockModal}
                 onRequestClose = {() => setShowStockModal(false)}
