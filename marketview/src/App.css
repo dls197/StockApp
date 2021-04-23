@@ -53,3 +53,8 @@ body {
     align-items: center;
     list-style: none;
 }
+
+.title {
+    text-align: center;
+    align-content: center;
+}
