@@ -5,9 +5,8 @@ express, body-parser, mysql, nodemon, cors
 
 const express = require('express')
 const mysql = require('mysql')
-
-
 const app = express()
+const cors = require('cors')
 
 app.use(express.json())
 

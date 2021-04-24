@@ -8,7 +8,11 @@ import Modal from 'react-modal'
 import '../css/HomeModal.css'
 
 
+
 function Home({ logOut, username }) {
+    //decide whether to show the stock graph modal or not
+    const [showLoginModal, setLoginModal] = useState(true)
+
     return (
         <div className="home-container">
             <Header title = "Home" username = {username} logOut = {logOut} />
