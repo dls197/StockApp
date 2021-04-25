@@ -8,11 +8,11 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 
-
 function App() {
   const finnhubApiKey = process.env.REACT_APP_FINNHUB_API_KEY;
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userThatIsLoggedIn, setUserThatIsLoggedIn] = useState("User23");
+  const [loginStatus, setLoginStatus] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [newsData, setNewsData] = useState([]); //variable to store newsData
 
   //func we will eventually use to log the user out, and pass it into header as a prop
@@ -21,15 +21,7 @@ function App() {
     console.log("User logged out")
     if (isLoggedIn === true) {
       setIsLoggedIn(false)
-      setUserThatIsLoggedIn("")
-    }
-  }
-
-  const logIn = (username) => {
-    //log them in then
-    console.log("User logged in")
-    if (isLoggedIn === false) {
-      setUserThatIsLoggedIn(username)
+      setUsername("")
     }
   }
 
@@ -53,7 +45,12 @@ function App() {
           render = {(props) => <Home 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {userThatIsLoggedIn} 
+                                  username = {username}
+                                  password = {password}
+                                  setUsername = {setUsername}
+                                  setPassword = {setPassword}
+                                  loginStatus = {loginStatus}
+                                  setLoginStatus = {setLoginStatus} 
                                 />}
           />
           <Route 
@@ -61,7 +58,7 @@ function App() {
           render = {(props) => <News 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {userThatIsLoggedIn} 
+                                  username = {username} 
                                   newsData = {newsData} 
                                 />}
           />
@@ -70,7 +67,7 @@ function App() {
           render = {(props) => <Stocks 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {userThatIsLoggedIn} 
+                                  username = {username} 
                                 />}
           />
           <Route 
@@ -78,7 +75,7 @@ function App() {
           render = {(props) => <MyProfile 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {userThatIsLoggedIn} 
+                                  username = {uusername} 
                                 />}
           />
           <Route 
@@ -86,7 +83,7 @@ function App() {
           render = {(props) => <Social 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {userThatIsLoggedIn} 
+                                  username = {username} 
                                 />}
           />
         </Switch>

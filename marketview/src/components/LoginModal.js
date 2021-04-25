@@ -1,16 +1,14 @@
-import react from 'react'
+import React from 'react'
 import Modal from 'react-modal'
 import '../css/LoginModal.css'
+import Axios from 'axios'
 
 
 Modal.setAppElement('#root')
 
-function LoginModal({ showLoginModal }) {
+function LoginModal({ username, password, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignUpModal }) {
 
     const customStyles = {
-        overlay : {
-            backgroundColor: 'grey'
-        },
         content : {
           top: '50%',
           left: '50%',
@@ -21,11 +19,43 @@ function LoginModal({ showLoginModal }) {
         }
     }
     
+    const logIn = () => {
+        Axios.post("http://localhost:3001/login", {
+          username: username,
+          password: password
+        }).then((response) => {
+          if (response.data.message) {
+            setLoginStatus(response.data.message)
+          } else {
+            setLoginStatus(response.data[0].username)
+          }
+        })
+    }
+
     return (
-        <div className = {"loginContainer"}>
-            <div className = {"signup"}>
-                <h1>Sign Up</h1>
-            </div>
+        <div className = {"loginModalContainer"}>
+        <Modal
+                isOpen = {showLoginModal}
+                shouldCloseOnOverlayClick = {false}
+                style = {customStyles}>
+            <h1>Log In</h1>
+            <label>Username</label>
+            <input type = "text" />
+            <label>Password</label>
+            <input type = "text" />
+            <button onClick = {() => {
+                logIn()
+            }
+            }>Log In
+            </button>
+            <button onClick = {() => {
+                    setShowLoginModal(false)
+                    setShowSignUpModal(true)
+                    }}> To Sign Up
+            </button> 
+        </Modal>
         </div>
     )
 }
+
+export default LoginModal
