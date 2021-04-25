@@ -6,15 +6,23 @@ import HomeMain from './HomeMain'
 import '../css/Home.css'
 import Modal from 'react-modal'
 import '../css/HomeModal.css'
+import WelcomeModal from './WelcomeModal'
 
 
 
 function Home({ logOut, username }) {
-    //decide whether to show the stock graph modal or not
-    const [showLoginModal, setLoginModal] = useState(true)
+    const [showWelcomeModal, setShowWelcomeModal] = useState(true)
+    const [showLoginModal, setShowLoginModal] = useState(false)
+    const [showSignUpModal, setShowSignUpModal] = useState(false)
 
     return (
         <div className="home-container">
+            <WelcomeModal 
+                showWelcomeModal = {showWelcomeModal}
+                setShowWelcomeModal = {setShowWelcomeModal}
+                setShowLoginModal = {setShowLoginModal}
+                setShowSignUpModal = {setShowSignUpModal}
+            />
             <Header title = "Home" username = {username} logOut = {logOut} />
             <Navbar />
                 {/* <Modal isOpen={true}>

@@ -24,7 +24,7 @@ function LoginModal({ showLoginModal }) {
     return (
         <div className = {"loginContainer"}>
             <div className = {"signup"}>
-                
+                <h1>Sign Up</h1>
             </div>
         </div>
     )
