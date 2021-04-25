@@ -6,7 +6,7 @@ import Axios from 'axios'
 
 Modal.setAppElement('#root')
 
-function LoginModal({ username, password, setUsername, setPassword, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignUpModal }) {
+function LoginModal({ username, password, setUsername, setPassword, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignupModal }) {
 
     const customStyles = {
         content : {
@@ -28,6 +28,7 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
             setLoginStatus(response.data.message)
           } else {
             setShowLoginModal(false)
+            setLoginStatus("")
           }
         })
     }
@@ -39,7 +40,6 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
             <h1>Log In</h1>
-            <label>Username</label>
             <input 
                 type = "text"
                 value = {username}
@@ -48,7 +48,6 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                     setUsername(event.target.value)
                 }} 
             />
-            <label>Password</label>
             <input 
                 type = "text"
                 value = {password}
@@ -60,8 +59,8 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
             <button onClick = {() => {logIn()}}>Log In</button>
             <button onClick = {() => {
                     setShowLoginModal(false)
-                    setShowSignUpModal(true)
-                    }}> To Sign Up
+                    setShowSignupModal(true)
+                    }}> Go To Signup
             </button>
             <h2>{loginStatus}</h2> 
         </Modal>

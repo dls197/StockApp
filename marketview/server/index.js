@@ -17,6 +17,39 @@ const database = mysql.createConnection({
     database: "marketview"
 })
 
+app.post('/signup', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    database.query(
+        "INSERT INTO users (username, password) VALUES (?,?)",
+        [username, password], 
+        (err, result) => {
+            console.log(err)
+        }
+    )
+})
+
+app.post('/login', (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    database.query(
+        "SELECT * FROM users WHERE username = ? AND password = ?",
+        [username, password], 
+        (err, result) => {
+            if (err) {
+            res.send({err: err})
+            }
+            if (result.length > 0) {
+                res.send(result)
+            } else {
+                res.send({message: "You entered the wrong username/password combination!"})
+            }
+        }
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })

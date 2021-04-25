@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import HomeMain from './HomeMain'
 import '../css/Home.css'
-import '../css/HomeModal.css'
 import WelcomeModal from './WelcomeModal'
 import LoginModal from './LoginModal'
+import SignupModal from './SignupModal'
 
 
 
-function Home({ loginStatus, logOut, username, password, setUsername, setPassword }) {
+function Home({ loginStatus, setLoginStatus, logOut, username, password, setUsername, setPassword }) {
     const [showWelcomeModal, setShowWelcomeModal] = useState(true)
     const [showLoginModal, setShowLoginModal] = useState(false)
-    const [showSignUpModal, setShowSignUpModal] = useState(false)
+    const [showSignupModal, setShowSignupModal] = useState(false)
 
     return (
         <div className="home-container">
@@ -21,18 +21,30 @@ function Home({ loginStatus, logOut, username, password, setUsername, setPasswor
                 showWelcomeModal = {showWelcomeModal}
                 setShowWelcomeModal = {setShowWelcomeModal}
                 setShowLoginModal = {setShowLoginModal}
-                setShowSignUpModal = {setShowSignUpModal}
+                setShowSignupModal = {setShowSignupModal}
             />
             <LoginModal
                 showLoginModal = {showLoginModal}
                 setShowLoginModal = {setShowLoginModal}
-                setShowSignUpModal = {setShowSignUpModal}
+                setShowSignupModal = {setShowSignupModal}
                 username = {username}
                 password = {password}
                 setUsername = {setUsername}
                 setPassword = {setPassword}
                 loginStatus = {loginStatus}
+                setLoginStatus = {setLoginStatus}
             />
+            <SignupModal
+                showSignupModal = {showSignupModal}
+                setShowLoginModal = {setShowLoginModal}
+                setShowSignupModal = {setShowSignupModal}
+                username = {username}
+                password = {password}
+                setUsername = {setUsername}
+                setPassword = {setPassword}
+            />
+
+
             <Header title = "Home" username = {username} logOut = {logOut} />
             <Navbar />
                 {/* <Modal isOpen={true}>

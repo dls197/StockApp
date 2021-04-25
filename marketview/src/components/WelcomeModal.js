@@ -5,7 +5,7 @@ import '../css/WelcomeModal.css'
 
 Modal.setAppElement('#root')
 
-function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal, setShowSignUpModal }) {
+function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal, setShowSignupModal }) {
 
     const customStyles = {
         content : {
@@ -35,7 +35,7 @@ function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal
                 </button>
                 <button onClick = {() => {
                     setShowWelcomeModal(false)
-                    setShowSignUpModal(true)
+                    setShowSignupModal(true)
                     }}>Sign Up
                 </button> 
             </div>

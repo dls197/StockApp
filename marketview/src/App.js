@@ -19,10 +19,12 @@ function App() {
   const logOut = () => {
     //log them out then
     console.log("User logged out")
+    /*
     if (isLoggedIn === true) {
       setIsLoggedIn(false)
       setUsername("")
     }
+    */
   }
 
   //API Call for sending news article info
@@ -75,7 +77,7 @@ function App() {
           render = {(props) => <MyProfile 
                                   {...props} 
                                   logout = {logOut} 
-                                  username = {uusername} 
+                                  username = {username} 
                                 />}
           />
           <Route 
