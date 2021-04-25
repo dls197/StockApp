@@ -6,7 +6,7 @@ import Axios from 'axios'
 
 Modal.setAppElement('#root')
 
-function LoginModal({ username, password, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignUpModal }) {
+function LoginModal({ username, password, setUsername, setPassword, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignUpModal }) {
 
     const customStyles = {
         content : {
@@ -27,7 +27,7 @@ function LoginModal({ username, password, loginStatus, setLoginStatus, showLogin
           if (response.data.message) {
             setLoginStatus(response.data.message)
           } else {
-            setLoginStatus(response.data[0].username)
+            setShowLoginModal(false)
           }
         })
     }
@@ -40,19 +40,30 @@ function LoginModal({ username, password, loginStatus, setLoginStatus, showLogin
                 style = {customStyles}>
             <h1>Log In</h1>
             <label>Username</label>
-            <input type = "text" />
+            <input 
+                type = "text"
+                value = {username}
+                placeholder = "Username..."
+                onChange = {(event) => {
+                    setUsername(event.target.value)
+                }} 
+            />
             <label>Password</label>
-            <input type = "text" />
-            <button onClick = {() => {
-                logIn()
-            }
-            }>Log In
-            </button>
+            <input 
+                type = "text"
+                value = {password}
+                placeholder = "Password..."
+                onChange = {(event) => {
+                    setPassword(event.target.value)
+                }}
+            />
+            <button onClick = {() => {logIn()}}>Log In</button>
             <button onClick = {() => {
                     setShowLoginModal(false)
                     setShowSignUpModal(true)
                     }}> To Sign Up
-            </button> 
+            </button>
+            <h2>{loginStatus}</h2> 
         </Modal>
         </div>
     )
