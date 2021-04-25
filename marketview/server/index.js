@@ -11,6 +11,7 @@ const bodyParser = require('body-parser')
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cors())
 
 const database = mysql.createConnection({
     user: "root",
