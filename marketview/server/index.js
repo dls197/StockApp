@@ -7,8 +7,10 @@ const express = require('express')
 const mysql = require('mysql')
 const app = express()
 const cors = require('cors')
+const bodyParser = require('body-parser')
 
 app.use(express.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 const database = mysql.createConnection({
     user: "root",
