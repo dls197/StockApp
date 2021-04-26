@@ -58,8 +58,9 @@ DROP TABLE IF EXISTS `stocks_followed`;
 CREATE TABLE `stocks_followed` (
   `username` varchar(255) NOT NULL,
   `stock_ticker` varchar(255) NOT NULL,
-  `company_name` varchar(255) NOT NULL,
+  /*`company_name` varchar(255) NOT NULL,
   `marked_for_share` tinyint(1) NOT NULL,
+  */
   PRIMARY KEY (`username`,`stock_ticker`),
   CONSTRAINT `stocks_followed_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
