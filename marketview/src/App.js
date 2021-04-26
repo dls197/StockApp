@@ -14,17 +14,14 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [newsData, setNewsData] = useState([]); //variable to store newsData
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true)
 
   //func we will eventually use to log the user out, and pass it into header as a prop
   const logOut = () => {
-    //log them out then
-    console.log("User logged out")
-    /*
-    if (isLoggedIn === true) {
-      setIsLoggedIn(false)
-      setUsername("")
-    }
-    */
+    alert("You logged out. Log back in to use MarketView!")
+    setUsername("")
+    setPassword("")
+    setLoginStatus("Logged out")
   }
 
   //API Call for sending news article info
@@ -52,7 +49,9 @@ function App() {
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   loginStatus = {loginStatus}
-                                  setLoginStatus = {setLoginStatus} 
+                                  setLoginStatus = {setLoginStatus}
+                                  showWelcomeModal = {showWelcomeModal}
+                                  setShowWelcomeModal = {setShowWelcomeModal} 
                                 />}
           />
           <Route 

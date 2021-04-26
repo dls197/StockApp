@@ -25,6 +25,7 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
           password: password
         }).then((response) => {
           if (response.data.message) {
+            //this is the error message
             setLoginStatus(response.data.message)
           } else {
             setShowLoginModal(false)

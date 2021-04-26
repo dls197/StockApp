@@ -14,33 +14,32 @@ function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
-          transform: 'translate(-50%, -50%)'
+          padding: '150px',
+          border: '2px solid black',
+          transform: 'translate(-50%, -50%)',
+          background: '#FFD700'
         }
     }
     
     return (
-        <div className = {"welcomeModalContainer"}>
         <Modal
                 isOpen = {showWelcomeModal}
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
-            <div className = {"welcomeSign"}>
+            <div id = "welcomeSign">
                 <h1>Welcome to MarketView!</h1>
             </div>
-            <div className = {"button"}>
-                <button onClick = {() => {
+            <button id = {"button1"} onClick = {() => {
                     setShowWelcomeModal(false)
                     setShowLoginModal(true)
-                    }}>Log In
-                </button>
-                <button onClick = {() => {
+                }}>Log In
+            </button>
+            <button id = {"button2"} onClick = {() => {
                     setShowWelcomeModal(false)
                     setShowSignupModal(true)
-                    }}>Sign Up
-                </button> 
-            </div>
+                }}>Sign Up
+            </button> 
         </Modal>
-        </div>
     )
 }
 

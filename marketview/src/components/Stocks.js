@@ -48,7 +48,11 @@ function Stocks({ logOut, username }) {
     
     return (
         <div>
-            <Header title = "Stocks" username = {username} logOut = {logOut} />
+            <Header 
+            title = "Stocks" 
+            username = {username} 
+            logOut = {logOut} 
+            />
             <Navbar />
                 <div className = {"searchContainer"}>
                     <form onSubmit = {handleSubmit}>

@@ -22,7 +22,11 @@ function News({ logOut, username, newsData }) {
 
     return (
         <div>
-            <Header title = "News" username = {username} logOut = {logOut} />
+            <Header 
+            title = "News" 
+            username = {username} 
+            logOut = {logOut}
+            />
             <Navbar />
             <div className="articles">
                     <section className="articleContent">

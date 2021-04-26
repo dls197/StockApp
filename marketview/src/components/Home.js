@@ -10,8 +10,7 @@ import SignupModal from './SignupModal'
 
 
 
-function Home({ loginStatus, setLoginStatus, logOut, username, password, setUsername, setPassword }) {
-    const [showWelcomeModal, setShowWelcomeModal] = useState(true)
+function Home({ loginStatus, setLoginStatus, logOut, username, password, setUsername, setPassword, showWelcomeModal, setShowWelcomeModal }) {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showSignupModal, setShowSignupModal] = useState(false)
 
@@ -43,9 +42,13 @@ function Home({ loginStatus, setLoginStatus, logOut, username, password, setUser
                 setUsername = {setUsername}
                 setPassword = {setPassword}
             />
-
-
-            <Header title = "Home" username = {username} logOut = {logOut} />
+            <Header 
+                title = "Home" 
+                username = {username} 
+                logOut = {logOut} 
+                showWelcomeModal = {showWelcomeModal} 
+                setShowWelcomeModal = {setShowWelcomeModal} 
+            />
             <Navbar />
                 {/* <Modal isOpen={true}>
                     <h1 className = "title">Welcome to MarketView</h1>
