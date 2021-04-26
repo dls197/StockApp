@@ -67,7 +67,7 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                     setShowSignupModal(true)
                     }}> Go To Signup
             </button>
-            <h2>{loginStatus}</h2> 
+            <h2 id = "loginStatus">{loginStatus}</h2> 
         </Modal>
     )
 }

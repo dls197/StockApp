@@ -10,7 +10,7 @@ import SignupModal from './SignupModal'
 
 
 
-function Home({ loginStatus, setLoginStatus, logOut, username, password, setUsername, setPassword, showWelcomeModal, setShowWelcomeModal }) {
+function Home({ loginStatus, setLoginStatus, username, password, setUsername, setPassword, showWelcomeModal, setShowWelcomeModal }) {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showSignupModal, setShowSignupModal] = useState(false)
 
@@ -43,9 +43,11 @@ function Home({ loginStatus, setLoginStatus, logOut, username, password, setUser
                 setPassword = {setPassword}
             />
             <Header 
-                title = "Home" 
+                title = "Home"
+                setLoginStatus = {setLoginStatus} 
                 username = {username} 
-                logOut = {logOut} 
+                setUsername = {setUsername}
+                setPassword = {setPassword} 
                 showWelcomeModal = {showWelcomeModal} 
                 setShowWelcomeModal = {setShowWelcomeModal} 
             />

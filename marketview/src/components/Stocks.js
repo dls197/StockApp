@@ -6,7 +6,7 @@ import './StockModal'
 import StockModal from './StockModal';
 
 
-function Stocks({ logOut, username }) {
+function Stocks({ username, setUsername, setPassword, setShowWelcomeModal, setLoginStatus }) {
 
     //the ticker symbol they search for
     const [searchTerm, setSearchTerm] = useState("")
@@ -51,7 +51,10 @@ function Stocks({ logOut, username }) {
             <Header 
             title = "Stocks" 
             username = {username} 
-            logOut = {logOut} 
+            setUsername = {setUsername}
+            setPassword = {setPassword}
+            setShowWelcomeModal = {setShowWelcomeModal}
+            setLoginStatus = {setLoginStatus} 
             />
             <Navbar />
                 <div className = {"searchContainer"}>
@@ -65,7 +68,6 @@ function Stocks({ logOut, username }) {
                                 setSearchTerm(event.target.value)
                             }}
                         />
-                        <i class="fa fa-line-chart searchIcon" aria-hidden="true"></i>
                         <input type = "submit" className = {"submitButton"}/>
                         </div>
                     </form>

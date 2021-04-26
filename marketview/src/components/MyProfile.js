@@ -3,13 +3,16 @@ import Header from './Header'
 import Navbar from './Navbar'
 
 
-function MyProfile({ logOut, username }) {
+function MyProfile({ username, setUsername, setPassword, setShowWelcomeModal, setLoginStatus }) {
     return (
         <div>
             <Header 
             title = "My Profile" 
             username = {username} 
-            logOut = {logOut} 
+            setUsername = {setUsername}
+            setPassword = {setPassword}
+            setShowWelcomeModal = {setShowWelcomeModal}
+            setLoginStatus = {setLoginStatus} 
             />
             <Navbar />
             <body>

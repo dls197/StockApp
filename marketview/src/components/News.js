@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import '../css/News.css'
 
 
-function News({ logOut, username, newsData }) {
+function News({ username, newsData, setUsername, setPassword, setShowWelcomeModal, setLoginStatus }) {
     // components of elements in newsData include:
     //.category .datetime .headline .id .image .related .source .summary .url
     const article1 = newsData[0];
@@ -25,7 +25,10 @@ function News({ logOut, username, newsData }) {
             <Header 
             title = "News" 
             username = {username} 
-            logOut = {logOut}
+            setUsername = {setUsername}
+            setPassword = {setPassword}
+            setShowWelcomeModal = {setShowWelcomeModal}
+            setLoginStatus = {setLoginStatus}
             />
             <Navbar />
             <div className="articles">

@@ -3,13 +3,16 @@ import Header from './Header'
 import Navbar from './Navbar'
 
 
-function Social({ logOut, username }) {
+function Social({ username, setUsername, setPassword, setShowWelcomeModal, setLoginStatus }) {
     return (
         <div>
             <Header 
             title = "Social" 
             username = {username} 
-            logOut = {logOut}
+            setUsername = {setUsername}
+            setPassword = {setPassword}
+            setShowWelcomeModal = {setShowWelcomeModal}
+            setLoginStatus = {setLoginStatus}
             />
             <Navbar />
             <body>

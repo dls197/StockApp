@@ -16,14 +16,6 @@ function App() {
   const [newsData, setNewsData] = useState([]); //variable to store newsData
   const [showWelcomeModal, setShowWelcomeModal] = useState(true)
 
-  //func we will eventually use to log the user out, and pass it into header as a prop
-  const logOut = () => {
-    alert("You logged out. Log back in to use MarketView!")
-    setUsername("")
-    setPassword("")
-    setLoginStatus("Logged out")
-  }
-
   //API Call for sending news article info
   const getNewsData = async () => {
     await fetch(`https://finnhub.io/api/v1/news?category=general&token=${finnhubApiKey}`)
@@ -43,7 +35,6 @@ function App() {
           path = "/" exact
           render = {(props) => <Home 
                                   {...props} 
-                                  logout = {logOut} 
                                   username = {username}
                                   password = {password}
                                   setUsername = {setUsername}
@@ -57,34 +48,46 @@ function App() {
           <Route 
           path = "/news"
           render = {(props) => <News 
-                                  {...props} 
-                                  logout = {logOut} 
+                                  {...props}                        
                                   username = {username} 
-                                  newsData = {newsData} 
+                                  newsData = {newsData}
+                                  setUsername = {setUsername}
+                                  setPassword = {setPassword}
+                                  setShowWelcomeModal = {setShowWelcomeModal}
+                                  setLoginStatus = {setLoginStatus} 
                                 />}
           />
           <Route 
           path = "/stocks"
           render = {(props) => <Stocks 
                                   {...props} 
-                                  logout = {logOut} 
-                                  username = {username} 
+                                  username = {username}
+                                  setUsername = {setUsername}
+                                  setPassword = {setPassword}
+                                  setShowWelcomeModal = {setShowWelcomeModal}
+                                  setLoginStatus = {setLoginStatus} 
                                 />}
           />
           <Route 
           path = "/myprofile"
           render = {(props) => <MyProfile 
                                   {...props} 
-                                  logout = {logOut} 
-                                  username = {username} 
+                                  username = {username}
+                                  setUsername = {setUsername}
+                                  setPassword = {setPassword}
+                                  setShowWelcomeModal = {setShowWelcomeModal}
+                                  setLoginStatus = {setLoginStatus} 
                                 />}
           />
           <Route 
           path = "/social"
           render = {(props) => <Social 
                                   {...props} 
-                                  logout = {logOut} 
-                                  username = {username} 
+                                  username = {username}
+                                  setUsername = {setUsername}
+                                  setPassword = {setPassword}
+                                  setShowWelcomeModal = {setShowWelcomeModal}
+                                  setLoginStatus = {setLoginStatus} 
                                 />}
           />
         </Switch>
