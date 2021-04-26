@@ -35,6 +35,7 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
             <label>Username</label>
+            <h1>Sign Up</h1>
             <input 
                 type = "text"
                 value = {username}
