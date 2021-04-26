@@ -9,14 +9,17 @@ Modal.setAppElement('#root')
 function LoginModal({ username, password, setUsername, setPassword, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignupModal }) {
 
     const customStyles = {
-        content : {
-          top: '50%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-          marginRight: '-50%',
-          transform: 'translate(-50%, -50%)'
-        }
+      content : {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        padding: '150px',
+        border: '2px solid black',
+        transform: 'translate(-50%, -50%)',
+        background: '#FFD700'
+      }
     }
     
     const logIn = () => {
@@ -35,13 +38,13 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
     }
 
     return (
-        <div className = {"loginModalContainer"}>
         <Modal
                 isOpen = {showLoginModal}
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
-            <h1>Log In</h1>
-            <input 
+            <h1 id = "loginSign">Log In</h1>
+            <input
+                id = "input1" 
                 type = "text"
                 value = {username}
                 placeholder = "Username..."
@@ -49,7 +52,8 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                     setUsername(event.target.value)
                 }} 
             />
-            <input 
+            <input
+                id = "input2" 
                 type = "text"
                 value = {password}
                 placeholder = "Password..."
@@ -57,15 +61,14 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                     setPassword(event.target.value)
                 }}
             />
-            <button onClick = {() => {logIn()}}>Log In</button>
-            <button onClick = {() => {
+            <button id = "button3" onClick = {() => {logIn()}}>Log In</button>
+            <button id = "button4" onClick = {() => {
                     setShowLoginModal(false)
                     setShowSignupModal(true)
                     }}> Go To Signup
             </button>
             <h2>{loginStatus}</h2> 
         </Modal>
-        </div>
     )
 }
 

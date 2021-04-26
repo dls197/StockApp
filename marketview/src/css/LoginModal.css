@@ -1,11 +1,17 @@
-.loginModalContainer {
+#loginSign {
     position: relative;
+    bottom: 80px;
+    border: black;
+    padding: 30px;
+    font-weight: bold;
+    margin-bottom: 150px;
+    font-size: 50px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
 }
 
-.loginModalContainer button {
+#button3 {
+    position: absolute;
     background-color: #4CAF50; 
     border: none;
     color: white;
@@ -13,10 +19,43 @@
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 50%; 
+    border-radius: 50%;
+    width: 90px;
+    height: 60px;
+    top: 56%;
+    left: 42%;
 }
 
-.loginModalConatiner input {
+#button4 {
+    position: absolute;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    top: 75%;
+    left: 42%;
+    width: 90px;
+    height: 60px;
+}
+
+#input1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 200px;
     width: 250px;
     height: 40px;
+}
+
+#input2 {
+    position: relative;
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    bottom: 200px;
 }

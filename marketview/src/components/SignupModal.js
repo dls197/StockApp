@@ -10,13 +10,16 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
 
     const customStyles = {
         content : {
-          top: '50%',
-          left: '50%',
-          right: 'auto',
-          bottom: 'auto',
-          marginRight: '-50%',
-          transform: 'translate(-50%, -50%)'
-        }
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            padding: '150px',
+            border: '2px solid black',
+            transform: 'translate(-50%, -50%)',
+            background: '#FFD700'
+          }
     }
 
     const signUp = () => {
@@ -29,36 +32,36 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
     }
 
     return (
-        <div className = {"signupModalContainer"}>
         <Modal
                 isOpen = {showSignupModal}
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
-            <label>Username</label>
-            <h1>Sign Up</h1>
-            <input 
+            <h1 id = "signupSign">Sign Up</h1>
+            <input
+                id = "input3" 
                 type = "text"
+                placeholder = "Username..."
                 value = {username}
                 onChange = {(event) => {
                     setUsername(event.target.value)
                 }} 
             />
-            <label>Password</label>
-            <input 
+            <input
+                id = "input4" 
                 type = "text"
+                placeholder = "Password..."
                 value = {password}
                 onChange = {(event) => {
                     setPassword(event.target.value)
                 }}
             />
-            <button onClick = {() => {signUp()}}>Sign Up</button>
-            <button onClick = {() => {
+            <button id = "button5" onClick = {() => {signUp()}}>Sign Up</button>
+            <button id = "button6" onClick = {() => {
                     setShowSignupModal(false)
                     setShowLoginModal(true)
                     }}> Go To Login
             </button> 
         </Modal>
-        </div>
     )
 }
 
