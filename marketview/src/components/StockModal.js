@@ -33,6 +33,15 @@ function StockModal({ xValues, yValues, showStockModal,
     }
 
     const deleteStock = () => {
+        Axios.delete(`http://localhost:3001/deleteStock/${username}/${tickerSymbol}`)
+        .then(() => {
+            //update the list of ticker symbols they are following
+            setTickerSymbolList(
+                tickerSymbolList.filter((symbol) => {
+                    return symbol !== tickerSymbol
+                })
+            )
+        })
         setShowStockModal(false)
     }
       

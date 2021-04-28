@@ -69,6 +69,21 @@ app.post('/addStock', (req, res) => {
     )
 })
 
+app.post('/deleteStock/:username/:tickerSymbol', (req, res) => {
+    const username = req.params.username
+    const tickerSymbol = req.params.tickerSymbol
+
+    database.query("DELETE FROM stocks_followed WHERE username = ? AND stock_ticker = ?",
+    [username, tickerSymbol], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })
