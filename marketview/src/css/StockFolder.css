@@ -1,0 +1,29 @@
+.folderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    width: 25%;
+}
+
+.headingContainer {
+    background-color: grey;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.folderButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellow;
+    width: 100%;
+    height: 90%;
+}

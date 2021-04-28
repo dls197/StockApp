@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import StockFolder from './StockFolder'
+import '../css/MyProfile.css'
 
 
 function MyProfile({ username, setUsername, setPassword, 
@@ -30,7 +31,6 @@ function MyProfile({ username, setUsername, setPassword,
                     purpose = "myProfile"
                 />
             </div>
-
         </div>
     )
 }

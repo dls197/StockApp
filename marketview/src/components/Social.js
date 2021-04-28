@@ -15,9 +15,8 @@ function Social({ username, setUsername, setPassword, setShowWelcomeModal, setLo
             setLoginStatus = {setLoginStatus}
             />
             <Navbar />
-            <body>
-                <h1>Social Page</h1>
-            </body>
+            
+            <h1>Social Page</h1>
         </div>
     )
 }

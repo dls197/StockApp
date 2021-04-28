@@ -70,7 +70,9 @@ function StockModal({ xValues, yValues, showStockModal,
             <Modal
                 isOpen = {showStockModal}
                 onRequestClose = {() => setShowStockModal(false)}
-                style = {customStyles}>
+                style = {customStyles}
+                fade ={false}
+            >
                 
                 <Plot
                     data = {[
