@@ -2,6 +2,7 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 import Modal from 'react-modal';
 import '../css/StockModal.css';
+import Axios from 'axios';
 
 Modal.setAppElement('#root')
 
@@ -24,6 +25,10 @@ function StockModal({ xValues, yValues, showStockModal,
       }
     
     const addStock = () => {
+        Axios.post("http://localhost:3001/addStock", {
+            username: username,
+            tickerSymbol: tickerSymbol
+        })
         setShowStockModal(false)
     }
 
@@ -36,7 +41,7 @@ function StockModal({ xValues, yValues, showStockModal,
         if (purpose === "stocks" || purpose === "social") {
             return (
                 <button
-                    onClick = {() => setShowStockModal(false)}
+                    onClick = {addStock}
                     className = {"addStockButton"}>Add to Stock Folder
                 </button>
             )

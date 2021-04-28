@@ -53,6 +53,22 @@ app.post('/login', (req, res) => {
     )
 })
 
+app.post('/addStock', (req, res) => {
+    const username = req.body.username
+    const tickerSymbol = req.body.tickerSymbol
+
+    database.query("INSERT INTO stocks_followed (username, stock_ticker) VALUES (?, ?)",
+    [username, tickerSymbol],
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send("Values Inserted");
+        }
+    } 
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })

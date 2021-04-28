@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import '../css/Stocks.css';
@@ -53,7 +53,7 @@ function Stocks({ username, setUsername, setPassword,
                 showStockModal = {showStockModal}
                 setShowStockModal = {setShowStockModal}
                 tickerSymbol = {searchTerm}
-                purpose = "myprofile"
+                purpose = "stocks"
                 username = {username}
             />
         </div>
