@@ -109,7 +109,12 @@ function App() {
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
-                                  setLoginStatus = {setLoginStatus} 
+                                  setLoginStatus = {setLoginStatus}
+                                  fetchStock = {fetchStock}
+                                  xValues = {xValues}
+                                  yValues = {yValues}
+                                  showStockModal = {showStockModal}
+                                  setShowStockModal = {setShowStockModal} 
                                 />}
           />
           <Route 

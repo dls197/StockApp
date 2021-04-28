@@ -84,6 +84,20 @@ app.post('/deleteStock/:username/:tickerSymbol', (req, res) => {
     )
 })
 
+app.get('/getStockInfo', (req, res) => {
+    const username = req.query.username
+
+    database.query("SELECT stock_ticker FROM stocks_followed WHERE username = ?",
+    username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })

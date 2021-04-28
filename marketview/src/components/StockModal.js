@@ -1,8 +1,8 @@
-import React from 'react';
-import Plot from 'react-plotly.js';
-import Modal from 'react-modal';
-import '../css/StockModal.css';
-import Axios from 'axios';
+import React from 'react'
+import Plot from 'react-plotly.js'
+import Modal from 'react-modal'
+import '../css/StockModal.css'
+import Axios from 'axios'
 
 Modal.setAppElement('#root')
 
