@@ -5,7 +5,9 @@ import '../css/StockModal.css';
 
 Modal.setAppElement('#root')
 
-function StockModal({ xValues, yValues, showStockModal, setShowStockModal, tickerSymbol }) {
+function StockModal({ xValues, yValues, showStockModal, 
+                    setShowStockModal, tickerSymbol, purpose,
+                    username, tickerSymbolList, setTickerSymbolList }) {
 
     const customStyles = {
         overlay : {
@@ -19,7 +21,34 @@ function StockModal({ xValues, yValues, showStockModal, setShowStockModal, ticke
           marginRight: '-50%',
           transform: 'translate(-50%, -50%)'
         }
-      }  
+      }
+    
+    const addStock = () => {
+        setShowStockModal(false)
+    }
+
+    const deleteStock = () => {
+        setShowStockModal(false)
+    }
+      
+    
+    const addOrRemoveButton = () => {
+        if (purpose === "stocks" || purpose === "social") {
+            return (
+                <button
+                    onClick = {() => setShowStockModal(false)}
+                    className = {"addStockButton"}>Add to Stock Folder
+                </button>
+            )
+        } else {
+            return (
+                <button
+                    onClick = {deleteStock}
+                    className = {"addStockButton"}>Remove from Stock Folder
+                </button>
+            )
+        }
+    }
 
     return (
         <div className = {"stockModal"}>
@@ -45,11 +74,7 @@ function StockModal({ xValues, yValues, showStockModal, setShowStockModal, ticke
                     onClick = {() => setShowStockModal(false)}
                     className = {"closeModalButton"}>Close Stock Information
                 </button>
-                <button
-                    onClick = {() => setShowStockModal(false)}
-                    className = {"addStockButton"}>Add to Stock Folder
-                    {/*this button needs to be connected with the backend*/}
-                </button>
+                {addOrRemoveButton()}
             </Modal>
         </div>
     )

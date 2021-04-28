@@ -53,6 +53,8 @@ function Stocks({ username, setUsername, setPassword,
                 showStockModal = {showStockModal}
                 setShowStockModal = {setShowStockModal}
                 tickerSymbol = {searchTerm}
+                purpose = "myprofile"
+                username = {username}
             />
         </div>
     )
