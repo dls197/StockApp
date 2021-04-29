@@ -33,20 +33,18 @@ function HomeMain( { dowX, dowY, nasdaqX, nasdaqY } ) {
             <div className="stock-container">
                 <h2>Current Nasdaq</h2>
                 <h3>${mostRecentNasdaq} USD</h3>
-                <div className="stock-plot">
-                    <Plot
-                        data = {[
-                            {
-                                x: nasdaqX,
-                                y: nasdaqY,
-                                type: 'scatter',
-                                mode: 'lines+markers',
-                                marker: {color: 'red'},
-                            }
-                            ]}
-                            layout={ {width: 650, height: 397.222} }
-                    />
-                </div>
+                <Plot
+                    data = {[
+                        {
+                            x: nasdaqX,
+                            y: nasdaqY,
+                            type: 'scatter',
+                            mode: 'lines+markers',
+                            marker: {color: 'red'},
+                        }
+                        ]}
+                        layout={ {width: 650, height: 397.222} }
+                />
             </div>
         </div>
     )
