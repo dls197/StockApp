@@ -16,8 +16,7 @@ function Personal({ username }) {
                 username: username
             }
         }).then((response) => {
-            setFullName(response.data.full_name)
-            console.log(response.data.full_name)
+            setFullName(response.data[0].full_name)
         })
 
         Axios.get("http://localhost:3001/getBio", {
@@ -25,16 +24,19 @@ function Personal({ username }) {
                 username: username
             }
         }).then((response) => {
-            setBio(response.data.bio)
+            setBio(response.data[0].bio)
         }) 
     }, [])
 
     const handleNameChange = (event) => {
         event.preventDefault()
-        setFullName(newFullName)
+        setFullName(newFullName) 
         Axios.put("http://localhost:3001/updateFullName", {
             username: username,
-            fullName: fullName
+            fullName: newFullName //i would have just sent fullName instead of newFullName, but the set methods are really slow and don't update the values before the request is sent
+        }).then((response) => {
+            console.log(response)
+            console.log(`the new full name = ${newFullName}`)
         })
     }
 
@@ -43,11 +45,10 @@ function Personal({ username }) {
         setBio(newBio)
         Axios.put("http://localhost:3001/updateBio", {
             username: username,
-            bio: bio
+            bio: newBio //same as above
         })
     }
     
-
     return (
         <div className = "folderContainer">
             <div className = "headingContainer3">
@@ -56,7 +57,7 @@ function Personal({ username }) {
             <div className = "folderButtonContainer2">
             <p id = "currentFullName">Your Full Name: {fullName}</p>
             {/*submit sends the new info to the database*/}
-            <form onSubmit = {handleNameChange}>
+            <form onSubmit = {(event) => handleNameChange(event)}>
                 <div className = "inputPair">  
                     <input
                         className = "change" 
@@ -73,7 +74,7 @@ function Personal({ username }) {
                     />
                 </div> 
             </form>
-            <p id = "currentBio">Your Bio: {bio}</p>
+            <p id = "currentBio">Your Bio: <h5>{bio}</h5></p>
             <form onSubmit = {handleBioChange}>
                 <div className = "inputPair">  
                     <input
