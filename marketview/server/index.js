@@ -98,6 +98,20 @@ app.get('/getStockInfo', (req, res) => {
     )
 })
 
+app.get('/getCommentsInfo', (req, res) => {
+    const username = req.query.username
+
+    database.query("SELECT * FROM comments WHERE username = ?",
+    username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })

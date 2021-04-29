@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import StockFolder from './StockFolder'
+import CommentsDisplay from './CommentsDisplay'
 import '../css/MyProfile.css'
 
 
@@ -30,6 +31,7 @@ function MyProfile({ username, setUsername, setPassword,
                     setShowStockModal = {setShowStockModal}
                     purpose = "myProfile"
                 />
+                <CommentsDisplay username = {username} />
             </div>
         </div>
     )
