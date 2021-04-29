@@ -16,8 +16,7 @@ function Personal({ username }) {
                 username: username
             }
         }).then((response) => {
-            setFullName(response.data.full_name)
-            console.log(response.data.full_name)
+            setFullName(response.data[0].full_name)
         })
 
         Axios.get("http://localhost:3001/getBio", {
@@ -25,7 +24,7 @@ function Personal({ username }) {
                 username: username
             }
         }).then((response) => {
-            setBio(response.data.bio)
+            setBio(response.data[0].bio)
         }) 
     }, [])
 
@@ -80,7 +79,7 @@ function Personal({ username }) {
                         className = "change" 
                         type = "text"
                         value = {newBio}
-                        placeholder = "Change Full Name to..."
+                        placeholder = "Change Bio to..."
                         onChange = {(event) => {
                             setNewBio(event.target.value)
                         }}
