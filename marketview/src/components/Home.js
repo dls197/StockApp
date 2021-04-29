@@ -10,7 +10,8 @@ import SignupModal from './SignupModal'
 
 
 
-function Home({ loginStatus, setLoginStatus, username, password, setUsername, setPassword, showWelcomeModal, setShowWelcomeModal }) {
+function Home({ loginStatus, setLoginStatus, username, password, setUsername, setPassword,
+     showWelcomeModal, setShowWelcomeModal, dowX, dowY, nasdaqX, nasdaqY }) {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showSignupModal, setShowSignupModal] = useState(false)
 
@@ -52,7 +53,12 @@ function Home({ loginStatus, setLoginStatus, username, password, setUsername, se
                 setShowWelcomeModal = {setShowWelcomeModal} 
             />
             <Navbar />
-            <HomeMain />
+            <HomeMain
+                dowX = {dowX}
+                dowY = {dowY}
+                nasdaqX = {nasdaqX}
+                nasdaqY = {nasdaqY}
+            />
             <Footer />
         </div>
     )

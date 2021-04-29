@@ -14,10 +14,14 @@ function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [newsData, setNewsData] = useState([]) //variable to store newsData
-  const [showWelcomeModal, setShowWelcomeModal] = useState(true)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const [searchTerm, setSearchTerm] = useState("") //the ticker symbol they search for
   const [xValues, setXValues] = useState([]) //dates fetched from api
   const [yValues, setYValues] = useState([]) //prices fetched from api
+  const [dowX, setDowX] = useState([])
+  const [dowY, setDowY] = useState([])
+  const [nasdaqX, setNasdaqX] = useState([])
+  const [nasdaqY, setNasdaqY] = useState([])
   const [showStockModal, setShowStockModal] = useState(false) //decide whether to show the stock graph modal or not
 
 
@@ -27,6 +31,48 @@ function App() {
             .then(Response => Response.json())
             .then(data => setNewsData(data))
   }
+
+  //API Call for sending Dow Jones Data (based on the most popular Dow Jones ETF)
+  const getDowData = async () => {
+    const apiKey = "BFW1POG1RFAENYS8"
+    let apiCall = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=DIA&outputsize=compact&apikey=${apiKey}`
+    let xVals = []
+    let yVals = []
+
+    fetch(apiCall)
+        .then(response => response.json())
+        .then(response => {
+            for (let item in response['Time Series (Daily)']) {
+                xVals.push(item);
+                yVals.push(response['Time Series (Daily)'][item]['1. open']);
+            }
+
+            yVals = yVals.map((item) => { return item * 100 })
+            setDowX(xVals)
+            setDowY(yVals)
+        })
+  }
+
+    //API Call for sending NASDAQ Data (based on the most popular NASDAQ ETF)
+    const getNasdaqData = async () => {
+      const apiKey = "BFW1POG1RFAENYS8"
+      let apiCall = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=QQQM&outputsize=compact&apikey=${apiKey}`
+      let xVals = []
+      let yVals = []
+  
+      fetch(apiCall)
+          .then(response => response.json())
+          .then(response => {
+              for (let item in response['Time Series (Daily)']) {
+                  xVals.push(item);
+                  yVals.push(response['Time Series (Daily)'][item]['1. open']);
+              }
+  
+              yVals = yVals.map((item) => { return item * 100 })
+              setNasdaqX(xVals)
+              setNasdaqY(yVals)
+          })
+    }
   
   //API Call for fetching stocks info
 
@@ -51,6 +97,8 @@ function App() {
 
   useEffect(() => {
     getNewsData()
+    getDowData()
+    getNasdaqData()
   }, [])
 
   return (
@@ -69,6 +117,10 @@ function App() {
                                   setLoginStatus = {setLoginStatus}
                                   showWelcomeModal = {showWelcomeModal}
                                   setShowWelcomeModal = {setShowWelcomeModal} 
+                                  dowX = {dowX}
+                                  dowY = {dowY}
+                                  nasdaqX = {nasdaqX}
+                                  nasdaqY = {nasdaqY}
                                 />}
           />
           <Route 
