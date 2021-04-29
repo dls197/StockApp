@@ -80,7 +80,7 @@ function Personal({ username }) {
                         className = "change" 
                         type = "text"
                         value = {newBio}
-                        placeholder = "Change Full Name to..."
+                        placeholder = "Change Bio to..."
                         onChange = {(event) => {
                             setNewBio(event.target.value)
                         }}
