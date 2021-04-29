@@ -52,12 +52,7 @@ function Home({ loginStatus, setLoginStatus, username, password, setUsername, se
                 setShowWelcomeModal = {setShowWelcomeModal} 
             />
             <Navbar />
-                {/* <Modal isOpen={true}>
-                    <h1 className = "title">Welcome to MarketView</h1>
-                    <h2>Modal title</h2>
-                    <p>Modal Body</p>
-                </Modal> */}
-                <HomeMain />
+            <HomeMain />
             <Footer />
         </div>
     )

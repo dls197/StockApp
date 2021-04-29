@@ -10,10 +10,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App() {
   const finnhubApiKey = process.env.REACT_APP_FINNHUB_API_KEY;
-  const [loginStatus, setLoginStatus] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [newsData, setNewsData] = useState([]); //variable to store newsData
+  const [loginStatus, setLoginStatus] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [newsData, setNewsData] = useState([]) //variable to store newsData
   const [showWelcomeModal, setShowWelcomeModal] = useState(true)
   const [searchTerm, setSearchTerm] = useState("") //the ticker symbol they search for
   const [xValues, setXValues] = useState([]) //dates fetched from api
@@ -25,7 +25,7 @@ function App() {
   const getNewsData = async () => {
     await fetch(`https://finnhub.io/api/v1/news?category=general&token=${finnhubApiKey}`)
             .then(Response => Response.json())
-            .then(data => setNewsData(data));
+            .then(data => setNewsData(data))
   }
   
   //API Call for fetching stocks info
@@ -50,8 +50,8 @@ function App() {
     }
 
   useEffect(() => {
-    getNewsData();
-  }, []);
+    getNewsData()
+  }, [])
 
   return (
     <Router>

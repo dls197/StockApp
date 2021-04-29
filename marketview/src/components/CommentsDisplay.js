@@ -21,11 +21,11 @@ function CommentsDisplay({ username }) {
     }, [])
 
     return (
-        <div className = "commentAreaContainer">
-            <div className = "headingContainer">
-                <h1>Comments on my Profile</h1>
+        <div className = "folderContainer">
+            <div className = "headingContainer2">
+                <h1>Comments</h1>
             </div>
-            <div className = "commentElementsContainer">
+            <div className = "folderButtonContainer">
                 {commentsList.map((commentObject, index) => {
                     return (
                         <p key = {index}>
