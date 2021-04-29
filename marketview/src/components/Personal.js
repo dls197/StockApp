@@ -49,7 +49,6 @@ function Personal({ username }) {
         })
     }
     
-
     return (
         <div className = "folderContainer">
             <div className = "headingContainer3">
