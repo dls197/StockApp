@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import Axios from 'axios'
+import OtherUserModal from './OtherUserModal'
 
 
 
@@ -61,6 +62,17 @@ function Social({ username, setUsername, setPassword,
                     </form>
             </div>
             <h2 id = "loginStatus">{searchStatus}</h2>
+            <OtherUserModal
+                username = {username}
+                searchedUsername = {searchedUsername}
+                fetchStock = {fetchStock}
+                xValues = {xValues}
+                yValues = {yValues}
+                showOtherUserModal = {showOtherUserModal}
+                setShowOtherUserModal = {setShowOtherUserModal}
+                showStockModal = {showStockModal}
+                setShowStockModal = {setShowStockModal}
+            />
         </div>
     )
 }

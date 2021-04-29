@@ -1,7 +1,8 @@
 import React from 'react'
 import Modal from 'react-modal'
-import '../css/showOtherUserModal.css'
-import Axios from 'axios'
+import StockFolder from './StockFolder'
+import '../css/OtherUserModal.css'
+
 
 Modal.setAppElement('#root')
 
@@ -26,6 +27,19 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
             <Modal
                     isOpen = {showOtherUserModal}
                     style = {customStyles}>
+                <div className = "theBigDiv">
+                    <div className = "stocksAndComments">
+                        <StockFolder
+                            username = {searchedUsername}
+                            fetchStock = {fetchStock}
+                            xValues = {xValues}
+                            yValues = {yValues}
+                            showStockModal = {showStockModal}
+                            setShowStockModal = {setShowStockModal}
+                            purpose = "social"
+                        />
+                    </div>
+                </div>
                 <button id = "stopLooking" onClick = {() => {
                         setShowOtherUserModal(false)
                     }}>Back to User Search
@@ -55,4 +69,3 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
 
 
 
-}
