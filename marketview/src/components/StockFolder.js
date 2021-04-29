@@ -10,6 +10,7 @@ function StockFolder({ username, fetchStock, xValues,
 
 
     const [tickerSymbolList, setTickerSymbolList] = useState([])
+    const [currentSymbol, setCurrentSymbol] = useState("")
     
     //get & set list of ticker symbols user is following on inital render        
     useEffect(() => {
@@ -26,45 +27,42 @@ function StockFolder({ username, fetchStock, xValues,
 
     //set x and y values so we can pull up the stock graph on a click
     const getStockInfo = (index) => {
-        const symbol = tickerSymbolList[index]
-        console.log(`Ticker symbol : ${symbol}`)
-        fetchStock(symbol) //sets x and y vals
+        setCurrentSymbol(tickerSymbolList[index])
+        console.log(`Ticker symbol : ${currentSymbol}`)
+        fetchStock(currentSymbol) //sets x and y vals
         setShowStockModal(true)
-        console.log(`${xValues} and y values: ${yValues} open: ${showStockModal}`)
+        console.log(`open: ${showStockModal}`)
+    }
 
-        return (
-            <div>
+    return (
+        <div>
+            <div className = "folderContainer">
+                <div className = "headingContainer">
+                    <h1>Stock Folder</h1>
+                </div>
+                <div className = "folderButtonContainer">
+                {tickerSymbolList.map((symbol, index) => {
+                    return (
+                        <button 
+                            key = {index}
+                            onClick = {() => getStockInfo(index)}
+                        ><h3>{symbol}</h3>
+                        </button>       
+                    )
+                })}
+                </div>
+            </div>
             <StockModal
                 xValues = {xValues}
                 yValues = {yValues}
                 showStockModal = {showStockModal}
                 setShowStockModal = {setShowStockModal}
-                tickerSymbol = {symbol}
+                tickerSymbol = {currentSymbol}
                 purpose = {purpose}
                 username = {username}
                 tickerSymbolList = {tickerSymbolList}
                 setTickerSymbolList = {setTickerSymbolList}
             />
-            </div>
-        )
-    }
-
-    return (
-        <div className = "folderContainer">
-            <div className = "headingContainer">
-                <h1>Stock Folder</h1>
-            </div>
-            <div className = "folderButtonContainer">
-            {tickerSymbolList.map((symbol, index) => {
-                return (
-                    <button 
-                        key = {index}
-                        onClick = {() => getStockInfo(index)}
-                    ><h3>{symbol}</h3>
-                    </button>       
-                )
-            })}
-            </div>
         </div>
         )
 }
