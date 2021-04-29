@@ -47,8 +47,12 @@
 .searchContainer input.submitButton {
     position: relative;
     width: 100px;
+    top: -1px;
     font-style: normal;
     background-color: rgb(55, 194, 37);
 }
 
+.searchContainer input.submitButton:hover {
+    cursor: pointer;
+}
 

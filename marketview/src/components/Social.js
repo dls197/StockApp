@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import Axios from 'axios'
-import '../css/Social.css'
+
 
 
 
