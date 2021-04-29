@@ -35,8 +35,7 @@ function StockFolder({ username, fetchStock, xValues,
     }
 
     return (
-        <div>
-            <div className = "folderContainer">
+        <div className = "folderContainer">
                 <div className = "headingContainer">
                     <h1>Stock Folder</h1>
                 </div>
@@ -51,7 +50,6 @@ function StockFolder({ username, fetchStock, xValues,
                     )
                 })}
                 </div>
-            </div>
             <StockModal
                 xValues = {xValues}
                 yValues = {yValues}
