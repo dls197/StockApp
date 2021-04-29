@@ -20,7 +20,6 @@ function Stocks({ username, setUsername, setPassword,
         setShowStockModal(true)
     }
 
-    
     return (
         <div>
             <Header 

@@ -125,7 +125,12 @@ function App() {
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
-                                  setLoginStatus = {setLoginStatus} 
+                                  setLoginStatus = {setLoginStatus}
+                                  xValues = {xValues}
+                                  yValues = {yValues}
+                                  showStockModal = {showStockModal}
+                                  setShowStockModal = {setShowStockModal}
+                                  fetchStock = {fetchStock} 
                                 />}
           />
         </Switch>
