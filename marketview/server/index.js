@@ -53,6 +53,25 @@ app.post('/login', (req, res) => {
     )
 })
 
+app.post('/searchUser', (req, res) => {
+    const searchedUsername = req.body.searchedUsername
+
+    database.query(
+        "SELECT username FROM users WHERE username = ?",
+        searchedUsername, 
+        (err, result) => {
+            if (err) {
+            res.send({err: err})
+            }
+            if (result.length > 0) {
+                res.send(result)
+            } else {
+                res.send({message: "We don't have this username in our records."})
+            }
+        }
+    )
+})
+
 app.post('/addStock', (req, res) => {
     const username = req.body.username
     const tickerSymbol = req.body.tickerSymbol

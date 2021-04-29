@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
+import Axios from 'axios'
 import '../css/Social.css'
 
 
@@ -14,10 +15,23 @@ function Social({ username, setUsername, setPassword,
     const [showOtherUserModal, setShowOtherUserModal] = useState(false)
     const [searchStatus, setSearchStatus] = useState("")
 
+    const searchUser = () => {
+        Axios.post("http://localhost:3001/searchUser", {
+          searchedUsername: searchedUsername
+        }).then((response) => {
+          if (response.data.message) {
+            //this is the error message
+            setSearchStatus(response.data.message)
+          } else {
+            setShowOtherUserModal(true)
+            setSearchStatus("")
+          }
+        })
+    }
+
     function handleSubmit(event) {
         event.preventDefault()
-        
-
+        searchUser()
     }
     
     return (
@@ -46,6 +60,7 @@ function Social({ username, setUsername, setPassword,
                         </div>
                     </form>
             </div>
+            <h2 id = "loginStatus">{searchStatus}</h2>
         </div>
     )
 }
