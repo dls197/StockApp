@@ -3,6 +3,7 @@ import Header from './Header'
 import Navbar from './Navbar'
 import StockFolder from './StockFolder'
 import CommentsDisplay from './CommentsDisplay'
+import Personal from './Personal'
 import '../css/MyProfile.css'
 
 
@@ -32,6 +33,7 @@ function MyProfile({ username, setUsername, setPassword,
                     purpose = "myProfile"
                 />
                 <CommentsDisplay username = {username} />
+                <Personal username = {username} />
             </div>
         </div>
     )

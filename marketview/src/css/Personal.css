@@ -1,0 +1,77 @@
+.headingContainer3 {
+    background-color: grey;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.folderButtonContainer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: yellow;
+    width: 100%;
+    height: 90%;
+}
+
+#currentFullName {
+    position: relative;
+    left: 9px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#currentBio {
+    position: relative;
+    left: 9px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inputPair {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    font-style: normal;
+    background-color: rgb(55, 194, 37);
+    position: relative;
+}
+
+.submit {
+    display: flex;
+    position: relative;
+    left: 53px;
+}
+
+.change {
+    height: 36px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 16px;
+    font-size: 36 px;
+    font-style: italic;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 14px;
+    background-color: rgb(238, 234, 234);
+}
+
+.submit:hover {
+    cursor: pointer;
+}

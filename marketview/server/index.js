@@ -69,7 +69,7 @@ app.post('/addStock', (req, res) => {
     )
 })
 
-app.post('/deleteStock/:username/:tickerSymbol', (req, res) => {
+app.delete('/deleteStock/:username/:tickerSymbol', (req, res) => {
     const username = req.params.username
     const tickerSymbol = req.params.tickerSymbol
 
@@ -103,6 +103,66 @@ app.get('/getCommentsInfo', (req, res) => {
 
     database.query("SELECT * FROM comments WHERE username = ?",
     username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.get('/getFullName', (req, res) => {
+    const username = req.query.username
+    
+    database.query("SELECT full_name FROM users WHERE username = ?",
+    username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.get('/getBio', (req, res) => {
+    const username = req.query.username
+    
+    database.query("SELECT bio FROM users WHERE username = ?",
+    username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.put('/updateFullName', (req, res) => {
+    const username = req.body.username
+    const fullName = req.body.fullName
+
+    database.query("UPDATE users SET full_name = ? WHERE username = ?",
+    [fullName, username],
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.put('/updateBio', (req, res) => {
+    const username = req.body.username
+    const bio = req.body.bio
+
+    database.query("UPDATE users SET bio = ? WHERE username = ?",
+    [bio, username],
+    (err, result) => {
         if (err) {
             console.log(err)
         } else {
