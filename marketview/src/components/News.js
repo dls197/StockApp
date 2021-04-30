@@ -42,7 +42,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article1.url}> 
+                        <a href={article1.url} target="_blank"> 
                             <img src={article1.image} alt="Article 1 Photograph" />
                         </a>
                     </div>
@@ -57,7 +57,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article2.url}> 
+                        <a href={article2.url} target="_blank"> 
                             <img src={article2.image} alt="Article 2 Photograph" />
                         </a>
                     </div>
@@ -72,7 +72,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article3.url}> 
+                        <a href={article3.url} target="_blank"> 
                             <img src={article3.image} alt="Article 3 Photograph" />
                         </a>
                     </div>
@@ -87,7 +87,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article4.url}> 
+                        <a href={article4.url} target="_blank"> 
                             <img src={article4.image} alt="Article 4 Photograph" />
                         </a>
                     </div>
@@ -102,7 +102,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article5.url}> 
+                        <a href={article5.url} target="_blank"> 
                             <img src={article5.image} alt="Article 5 Photograph" />
                         </a>
                     </div>
@@ -117,7 +117,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
                         </div>
                     </div>
                     <div className="cardImage">
-                        <a href={article6.url}> 
+                        <a href={article6.url} target="_blank"> 
                             <img src={article6.image} alt="Article 6 Photograph" />
                         </a>
                     </div>
