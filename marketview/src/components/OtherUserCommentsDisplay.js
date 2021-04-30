@@ -7,7 +7,6 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
 
     const [searchedUserCommentsList, setSearchedUserCommentsList] = useState([])
     const [newComment, setNewComment] = useState("")
-    const [currentDateTime, setCurrentDateTime] = useState("")
 
     useEffect(() => {
         Axios.get("http://localhost:3001/getSearchedUserCommentsInfo", {
@@ -19,25 +18,24 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
                 return row
             }))
         })
-
-        let today = new Date()
-        setCurrentDateTime(today.toLocaleString())
     }, [])
 
     const handleNewComment = (event) => {
         event.preventDefault()
+        let date = new Date()
+        let today = new date.toLocaleDateString()
         Axios.post("http://localhost:3001/insertNewComment", {
             username: yourUsername,
             searchedUsername: searchedUsername,
             comment: newComment,
-            dateTime: currentDateTime
+            dateTime: today
         }).then(() => {
             setSearchedUserCommentsList([
                 ...searchedUserCommentsList,
                 {
                     username: searchedUsername,
                     comment: newComment,
-                    date_time: currentDateTime,
+                    date_time: today,
                     commenter_username: yourUsername
                 }
             ])
