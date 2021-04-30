@@ -34,7 +34,93 @@ function StockFolder({ username, fetchStock, xValues,
         })
     }, [])
 
-    if (stockFolderPrivate === 'N') {
+    const makeStockFolderPrivate = () => {
+        Axios.put("http://localhost:3001/makeStockFolderPrivate", {
+            username: username
+        }).then(() => {
+            setStockFolderPrivate('Y')
+        })
+    }
+
+    const makeStockFolderPublic = () => {
+        Axios.put("http://localhost:3001/makeStockFolderPublic", {
+            username: username
+        }).then(() => {
+            setStockFolderPrivate('N')
+        })
+    }
+
+    if (stockFolderPrivate === 'N' && purpose === 'myProfile') { //stock folder is public, and the user is viewing it on myprofile
+        return (
+            <div className = "folderContainer">
+                    <div className = "headingContainer">
+                        <h1>Stock Folder</h1>
+                    </div>
+                    <div className = "folderButtonContainer">
+                    {tickerSymbolList.map((symbol, index) => {
+                        return (
+                            <button 
+                                key = {index}
+                                onClick = {() => {
+                                    setCurrentSymbol(symbol)
+                                    fetchStock(symbol)     //set x and y values so we can pull up the stock graph on a click       
+                                    setShowStockModal(true)
+                                }}
+                            ><h3>{symbol}</h3>
+                            </button>       
+                        )
+                    })}
+                    </div>
+                <StockModal
+                    xValues = {xValues}
+                    yValues = {yValues}
+                    showStockModal = {showStockModal}
+                    setShowStockModal = {setShowStockModal}
+                    tickerSymbol = {currentSymbol}
+                    purpose = {purpose}
+                    username = {username}
+                    tickerSymbolList = {tickerSymbolList}
+                    setTickerSymbolList = {setTickerSymbolList}
+                />
+                <button id = "makePrivate" onClick = {makeStockFolderPrivate}>Make Stock Folder Private</button>
+            </div>
+        )
+    } else if (stockFolderPrivate === 'Y' && purpose === 'myProfile') { //stock folder is private, and the user is viewing it on myprofile
+        return (
+            <div className = "folderContainer">
+                    <div className = "headingContainer">
+                        <h1>Stock Folder</h1>
+                    </div>
+                    <div className = "folderButtonContainer">
+                    {tickerSymbolList.map((symbol, index) => {
+                        return (
+                            <button 
+                                key = {index}
+                                onClick = {() => {
+                                    setCurrentSymbol(symbol)
+                                    fetchStock(symbol)     //set x and y values so we can pull up the stock graph on a click       
+                                    setShowStockModal(true)
+                                }}
+                            ><h3>{symbol}</h3>
+                            </button>       
+                        )
+                    })}
+                    </div>
+                <StockModal
+                    xValues = {xValues}
+                    yValues = {yValues}
+                    showStockModal = {showStockModal}
+                    setShowStockModal = {setShowStockModal}
+                    tickerSymbol = {currentSymbol}
+                    purpose = {purpose}
+                    username = {username}
+                    tickerSymbolList = {tickerSymbolList}
+                    setTickerSymbolList = {setTickerSymbolList}
+                />
+                <button id = "makePublic" onClick = {makeStockFolderPublic}>Make Stock Folder Public</button>
+            </div>
+        )
+    } else if (stockFolderPrivate === 'N' && purpose === 'social') { //stock folder is public, but someone else is viewing it from social page
         return (
             <div className = "folderContainer">
                     <div className = "headingContainer">
@@ -68,7 +154,8 @@ function StockFolder({ username, fetchStock, xValues,
                 />
             </div>
         )
-    } else {
+    } 
+    else { //stock folder is private, but someone else is viewing it from the social page
         return (
             <div className = "folderContainer">
                 <div className = "headingContainer">

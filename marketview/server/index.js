@@ -237,6 +237,36 @@ app.put('/updateBio', (req, res) => {
     )
 })
 
+app.put('/makeStockFolderPrivate', (req, res) => {
+    const username = req.body.username
+
+    database.query("UPDATE users SET has_private_stock_folder = 'Y' WHERE username = ?",
+    username,
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.put('/makeStockFolderPublic', (req, res) => {
+    const username = req.body.username
+
+    database.query("UPDATE users SET has_private_stock_folder = 'N' WHERE username = ?",
+    username,
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
 app.listen(3001, () => {
     console.log("running on port 3001")
 })
