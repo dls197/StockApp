@@ -26,6 +26,7 @@ function StockFolder({ username, fetchStock, xValues,
     }, [])
 
     //set x and y values so we can pull up the stock graph on a click
+    /*
     const getStockInfo = (index) => {
         setCurrentSymbol(tickerSymbolList[index])
         console.log(`Ticker symbol : ${currentSymbol}`)
@@ -33,6 +34,7 @@ function StockFolder({ username, fetchStock, xValues,
         setShowStockModal(true)
         console.log(`open: ${showStockModal}`)
     }
+    */
 
     return (
         <div className = "folderContainer">
@@ -44,7 +46,11 @@ function StockFolder({ username, fetchStock, xValues,
                     return (
                         <button 
                             key = {index}
-                            onClick = {() => getStockInfo(index)}
+                            onClick = {() => {
+                                setCurrentSymbol(symbol)
+                                fetchStock(symbol)            
+                                setShowStockModal(true)
+                            }}
                         ><h3>{symbol}</h3>
                         </button>       
                     )
