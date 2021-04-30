@@ -31,16 +31,16 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
             searchedUsername: searchedUsername,
             comment: newComment,
             dateTime: currentDateTime
-        })
-
-        Axios.get("http://localhost:3001/getSearchedUserCommentsInfo", {
-            params: {
-                searchedUsername: searchedUsername
-            }
-        }).then((response) => {
-            setSearchedUserCommentsList(response.data.map((row) => {
-                return row
-        }))
+        }).then(() => {
+            setSearchedUserCommentsList([
+                ...searchedUserCommentsList,
+                {
+                    username: searchedUsername,
+                    comment: newComment,
+                    date_time: currentDateTime,
+                    commenter_username: yourUsername
+                }
+            ])
         })
     }
     

@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments` (
   `username` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL,
-  `date_time` datetime DEFAULT NULL,
+  `date_time` varchar(255) DEFAULT NULL,
   'commenter_username' varchar(255) DEFAULT NULL,
   PRIMARY KEY (`username`,`comment`),
   CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
