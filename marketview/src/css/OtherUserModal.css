@@ -1,0 +1,15 @@
+#stopLooking {
+    position: relative;
+    background-color: #0dda14; 
+    border: 3px solid black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 120px;
+    height: 80px;
+    bottom: 15px;
+    left: 1350px;
+}

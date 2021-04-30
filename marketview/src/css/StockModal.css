@@ -4,18 +4,46 @@
 }
 
 .addStockButton {
-    display: absolute;
-    background-color: #4CAF50; /* Green */
-    border: none;
+    position: relative;
+    background-color: #0dda14; 
+    border: 3px solid black;
     color: white;
-    padding: 20px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
-    margin: 30px 20px;
-    margin-left: 250px;
     cursor: pointer;
     border-radius: 50%;
+    width: 120px;
+    height: 80px;
+    left: 150px;
+    bottom: 82px;
+}
+
+.closeModalButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    background-color: #0dda14; 
+    border: 3px solid black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 120px;
+    height: 80px;
+    top: 2px;
+    left: 190px;
+}
+
+.plotContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 

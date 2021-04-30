@@ -42,3 +42,29 @@
 button:hover {
     cursor: pointer;
 }
+
+#makePrivate {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(9, 207, 9);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 745px;
+    left: 430px;
+}
+
+#makePublic {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(9, 207, 9);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 745px;
+    left: 430px;
+}

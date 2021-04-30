@@ -60,7 +60,7 @@ function Personal({ username }) {
             <form onSubmit = {(event) => handleNameChange(event)}>
                 <div className = "inputPair">  
                     <input
-                        className = "change" 
+                        id = "change12" 
                         type = "text"
                         value = {newFullName}
                         placeholder = "Change Full Name to..."
@@ -70,7 +70,7 @@ function Personal({ username }) {
                     />
                     <input
                         type = "submit"
-                        className = "submit"
+                        id = "submit8"
                     />
                 </div> 
             </form>
@@ -78,7 +78,7 @@ function Personal({ username }) {
             <form onSubmit = {handleBioChange}>
                 <div className = "inputPair">  
                     <input
-                        className = "change" 
+                        id = "change13" 
                         type = "text"
                         value = {newBio}
                         placeholder = "Change Bio to..."
@@ -88,7 +88,7 @@ function Personal({ username }) {
                     />
                     <input
                         type = "submit"
-                        className = "submit"
+                        id = "submit9"
                     />
                 </div> 
             </form>

@@ -11,16 +11,15 @@ function StockModal({ xValues, yValues, showStockModal,
                     username, tickerSymbolList, setTickerSymbolList }) {
 
     const customStyles = {
-        overlay : {
-            backgroundColor: 'grey'
-        },
         content : {
           top: '50%',
           left: '50%',
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
-          transform: 'translate(-50%, -50%)'
+          transform: 'translate(-50%, -50%)',
+          height: '650px',
+          width: '900px'
         }
       }
     
@@ -73,7 +72,7 @@ function StockModal({ xValues, yValues, showStockModal,
                 style = {customStyles}
                 fade ={false}
             >
-                
+                <div className = "plotContainer">
                 <Plot
                     data = {[
                         {
@@ -90,6 +89,7 @@ function StockModal({ xValues, yValues, showStockModal,
                     onClick = {() => setShowStockModal(false)}
                     className = {"closeModalButton"}>Close Stock Information
                 </button>
+                </div>
                 {addOrRemoveButton()}
             </Modal>
         </div>
