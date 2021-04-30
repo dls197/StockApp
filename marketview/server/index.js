@@ -88,6 +88,24 @@ app.post('/addStock', (req, res) => {
     )
 })
 
+app.post('/insertNewComment', (req, res) => {
+    const yourUsername = req.body.yourUsername
+    const searchedUsername = req.body.searchedUsername
+    const comment = req.body.comment
+    const dateTime = req.body.dateTime
+
+    database.query("INSERT INTO comments (username, comment, date_time, commenter_username) VALUES (?, ?, ?, ?)",
+    [searchedUsername, comment, dateTime, yourUsername],
+    (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send("Values Inserted");
+        }
+    } 
+    )
+})
+
 app.delete('/deleteStock/:username/:tickerSymbol', (req, res) => {
     const username = req.params.username
     const tickerSymbol = req.params.tickerSymbol
@@ -122,6 +140,20 @@ app.get('/getCommentsInfo', (req, res) => {
 
     database.query("SELECT * FROM comments WHERE username = ?",
     username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
+app.get('/getSearchedUserCommentsInfo', (req, res) => {
+    const searchedUsername = req.query.searchedUsername
+
+    database.query("SELECT * FROM comments WHERE username = ?",
+    searchedUsername, (err, result) => {
         if (err) {
             console.log(err)
         } else {

@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from 'react-modal'
 import StockFolder from './StockFolder'
 import '../css/OtherUserModal.css'
+import OtherUserCommentsDisplay from './OtherUserCommentsDisplay'
 
 
 Modal.setAppElement('#root')
@@ -37,6 +38,10 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                             showStockModal = {showStockModal}
                             setShowStockModal = {setShowStockModal}
                             purpose = "social"
+                        />
+                        <OtherUserCommentsDisplay
+                            yourUsername = {username}
+                            searchedUsername = {searchedUsername}
                         />
                     </div>
                 </div>
