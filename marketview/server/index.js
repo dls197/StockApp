@@ -191,6 +191,20 @@ app.get('/getBio', (req, res) => {
     )
 })
 
+app.get('/getPrivateFolderStatus', (req, res) => {
+    const username = req.query.username
+
+    database.query("SELECT has_private_stock_folder FROM users WHERE username = ?",
+    username, (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+    }
+    )
+})
+
 app.put('/updateFullName', (req, res) => {
     const username = req.body.username
     const fullName = req.body.fullName
