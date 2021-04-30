@@ -28,7 +28,12 @@ app.post('/signup', (req, res) => {
         "INSERT INTO users (username, password) VALUES (?,?)",
         [username, password], 
         (err, result) => {
-            console.log(err)
+            if (err) {
+                res.send({message: "Signup Failed"})
+                console.log(err)
+            } else {
+                res.send({message: "You're All Signed Up!"})
+            }
         }
     )
 })
