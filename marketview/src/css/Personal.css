@@ -41,17 +41,6 @@
     flex-direction: column;
 }
 
-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 100px;
-    font-style: normal;
-    background-color: rgb(55, 194, 37);
-    position: relative;
-}
-
 .submit {
     display: flex;
     position: relative;

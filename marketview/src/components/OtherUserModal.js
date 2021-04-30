@@ -21,6 +21,7 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                     width: '90%',
                     marginRight: '-50%',
                     padding: '150px',
+                    background: 'blue',
                     border: '2px solid black',
                     transform: 'translate(-50%, -50%)'
         }

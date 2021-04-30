@@ -58,8 +58,15 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
                     )
                 })}
                 <form onSubmit = {(event) => handleNewComment(event)}>
-                    <input type = "text" value = {newComment} placeholder = "Leave a comment..." onChange = {(event) => {setNewComment(event.target.value)}} />
-                    <input type = "submit" />
+                    <div className = "theBigDiv5">
+                    <input
+                        id = "leaveComment" 
+                        type = "text" value = {newComment} 
+                        placeholder = "Leave a comment..." 
+                        onChange = {(event) => {setNewComment(event.target.value)}} 
+                    />
+                    <input id = "submit69" type = "submit" />
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,0 +1,19 @@
+.searchedUserNameBioContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 71, 33);
+    height: 100px;
+}
+
+.searchedUserNameBioContainer h1 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.searchedUserNameBioContainer h3 {
+    font-style: italic;
+    font-size: 19px;
+}
+

@@ -1,0 +1,9 @@
+#stopLooking {
+    position: relative;
+    font-size: 25px;
+    left: 1220px;
+    height: 50px;
+    border-radius: 14px;
+    border: 2px solid black;
+    background-color:  rgb(9, 207, 9);
+}

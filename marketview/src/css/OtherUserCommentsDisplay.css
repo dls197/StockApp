@@ -28,3 +28,47 @@
     width: 100%;
     height: 90%;
 }
+
+.commentsElementContainer8 p {
+    background-color: rgb(214, 124, 50);
+    height: 55px;
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#submit69 {
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: rgb(9, 207, 9);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#leaveComment {
+    width: 250px;
+    height: 50px;
+    border-radius: 14px;
+    font-size: 16px;
+    padding: 16px;
+    font-style: italic;
+    background-color: rgb(238, 234, 234);
+}
+
+#submit69:hover {
+    cursor: pointer;
+}
+
+.theBigDiv5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    width: 350px;
+}
+
+
