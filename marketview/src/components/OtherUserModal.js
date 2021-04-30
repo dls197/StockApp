@@ -2,6 +2,8 @@ import React from 'react'
 import Modal from 'react-modal'
 import StockFolder from './StockFolder'
 import '../css/OtherUserModal.css'
+import OtherUserCommentsDisplay from './OtherUserCommentsDisplay'
+import OtherUserPersonal from './OtherUserPersonal'
 
 
 Modal.setAppElement('#root')
@@ -16,8 +18,10 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                     left: '50%',
                     right: 'auto',
                     bottom: 'auto',
+                    width: '90%',
                     marginRight: '-50%',
                     padding: '150px',
+                    background: 'blue',
                     border: '2px solid black',
                     transform: 'translate(-50%, -50%)'
         }
@@ -25,10 +29,13 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
 
         return (
             <Modal
-                    isOpen = {showOtherUserModal}
-                    style = {customStyles}>
+                isOpen = {showOtherUserModal}
+                style = {customStyles}>
                 <div className = "theBigDiv">
-                    <div className = "stocksAndComments">
+                    <div className = "searchedUserPersonal">
+                    <OtherUserPersonal searchedUsername = {searchedUsername} />
+                    </div>
+                    <div className = "profileContainer">
                         <StockFolder
                             username = {searchedUsername}
                             fetchStock = {fetchStock}
@@ -37,6 +44,10 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                             showStockModal = {showStockModal}
                             setShowStockModal = {setShowStockModal}
                             purpose = "social"
+                        />
+                        <OtherUserCommentsDisplay
+                            yourUsername = {username}
+                            searchedUsername = {searchedUsername}
                         />
                     </div>
                 </div>
