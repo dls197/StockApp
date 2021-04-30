@@ -29,7 +29,7 @@ function CommentsDisplay({ username }) {
                 {commentsList.map((commentObject, index) => {
                     return (
                         <p key = {index}>
-                            {commentObject.commenter_username} said: {commentObject.comment}
+                            {commentObject.commenter_username} said: "{commentObject.comment}" on {commentObject.date_time}
                         </p>
                     )
                 })}

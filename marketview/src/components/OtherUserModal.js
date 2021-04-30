@@ -3,6 +3,7 @@ import Modal from 'react-modal'
 import StockFolder from './StockFolder'
 import '../css/OtherUserModal.css'
 import OtherUserCommentsDisplay from './OtherUserCommentsDisplay'
+import OtherUserPersonal from './OtherUserPersonal'
 
 
 Modal.setAppElement('#root')
@@ -30,6 +31,9 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                     style = {customStyles}>
                 <div className = "theBigDiv">
                     <div className = "stocksAndComments">
+                        <OtherUserPersonal
+                            searchedUsername = {searchedUsername}
+                        />
                         <StockFolder
                             username = {searchedUsername}
                             fetchStock = {fetchStock}

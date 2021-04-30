@@ -89,7 +89,7 @@ app.post('/addStock', (req, res) => {
 })
 
 app.post('/insertNewComment', (req, res) => {
-    const yourUsername = req.body.yourUsername
+    const yourUsername = req.body.username
     const searchedUsername = req.body.searchedUsername
     const comment = req.body.comment
     const dateTime = req.body.dateTime

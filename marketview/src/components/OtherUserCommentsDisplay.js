@@ -44,17 +44,16 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
         })
     }
     
-
     return (
-        <div className = "folderContainer">
-            <div className = "headingContainer2">
+        <div className = "bigContainer3">
+            <div className = "headingContainer6">
                 <h1>Comments</h1>
             </div>
-            <div className = "folderButtonContainer">
+            <div className = "commentsElementContainer8">
                 {searchedUserCommentsList.map((commentObject, index) => {
                     return (
                         <p key = {index}>
-                            {commentObject.commenter_username} said: {commentObject.comment} on {commentObject.date_time}
+                            {commentObject.commenter_username} said: "{commentObject.comment}" on {commentObject.date_time}
                         </p>
                     )
                 })}
