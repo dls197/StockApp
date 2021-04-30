@@ -1,0 +1,30 @@
+.bigContainer3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    width: 25%;
+}
+
+.headingContainer6 {
+    background-color: grey;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.commentsElementContainer8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: yellow;
+    width: 100%;
+    height: 90%;
+}

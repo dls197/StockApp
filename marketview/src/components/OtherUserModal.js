@@ -18,6 +18,7 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                     left: '50%',
                     right: 'auto',
                     bottom: 'auto',
+                    width: '90%',
                     marginRight: '-50%',
                     padding: '150px',
                     border: '2px solid black',
@@ -27,13 +28,13 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
 
         return (
             <Modal
-                    isOpen = {showOtherUserModal}
-                    style = {customStyles}>
+                isOpen = {showOtherUserModal}
+                style = {customStyles}>
                 <div className = "theBigDiv">
-                    <div className = "stocksAndComments">
-                        <OtherUserPersonal
-                            searchedUsername = {searchedUsername}
-                        />
+                    <div className = "searchedUserPersonal">
+                    <OtherUserPersonal searchedUsername = {searchedUsername} />
+                    </div>
+                    <div className = "profileContainer">
                         <StockFolder
                             username = {searchedUsername}
                             fetchStock = {fetchStock}
