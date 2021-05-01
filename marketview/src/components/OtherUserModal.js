@@ -38,6 +38,7 @@ function OtherUserModal({ username, searchedUsername, fetchStock,
                     <div className = "profileContainer">
                         <StockFolder
                             username = {searchedUsername}
+                            rootUsername = {username}
                             fetchStock = {fetchStock}
                             xValues = {xValues}
                             yValues = {yValues}

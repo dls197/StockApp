@@ -8,7 +8,7 @@ Modal.setAppElement('#root')
 
 function StockModal({ xValues, yValues, showStockModal, 
                     setShowStockModal, tickerSymbol, purpose,
-                    username, tickerSymbolList, setTickerSymbolList }) {
+                    username, rootUsername, tickerSymbolList, setTickerSymbolList }) {
 
     const customStyles = {
         content : {
@@ -24,11 +24,19 @@ function StockModal({ xValues, yValues, showStockModal,
       }
     
     const addStock = () => {
-        Axios.post("http://localhost:3001/addStock", {
-            username: username,
+        if (purpose === 'social') {
+            Axios.post("http://localhost:3001/addStock", {
+            username: rootUsername,
             tickerSymbol: tickerSymbol
         })
         setShowStockModal(false)
+        } else {
+            Axios.post("http://localhost:3001/addStock", {
+                username: username,
+                tickerSymbol: tickerSymbol
+            })
+            setShowStockModal(false)
+        }
     }
 
     const deleteStock = () => {
