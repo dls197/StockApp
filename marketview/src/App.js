@@ -14,7 +14,7 @@ function App() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [newsData, setNewsData] = useState([]) //variable to store newsData
-  const [showWelcomeModal, setShowWelcomeModal] = useState(true)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const [searchTerm, setSearchTerm] = useState("") //the ticker symbol they search for
   const [xValues, setXValues] = useState([]) //dates fetched from api
   const [yValues, setYValues] = useState([]) //prices fetched from api
