@@ -4,7 +4,7 @@ import StockModal from './StockModal'
 import '../css/StockFolder.css'
 
 
-function StockFolder({ username, fetchStock, xValues, 
+function StockFolder({ username, rootUsername, fetchStock, xValues, 
                     yValues, showStockModal, setShowStockModal,
                     purpose }) {
 
@@ -148,7 +148,8 @@ function StockFolder({ username, fetchStock, xValues,
                     setShowStockModal = {setShowStockModal}
                     tickerSymbol = {currentSymbol}
                     purpose = {purpose}
-                    username = {username}
+                    username = {username} //them, person's profile being viewed
+                    rootUsername = {rootUsername} //you, person searching
                     tickerSymbolList = {tickerSymbolList}
                     setTickerSymbolList = {setTickerSymbolList}
                 />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
 import '../css/SignupModal.css'
 import Axios from 'axios'
@@ -7,6 +7,8 @@ import Axios from 'axios'
 Modal.setAppElement('#root')
 
 function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, username, password, setUsername, setPassword}) {
+
+    const [signupStatus, setSignupStatus] = useState("")
 
     const customStyles = {
         content : {
@@ -28,6 +30,7 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
             password: password
         }).then((response) => {
             console.log(response)
+            setSignupStatus(response.data.message)
         })
     }
 
@@ -59,8 +62,12 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
             <button id = "button6" onClick = {() => {
                     setShowSignupModal(false)
                     setShowLoginModal(true)
+                    setSignupStatus("")
                     }}> Go To Login
-            </button> 
+            </button>
+            <div className = "signupCenterer">
+                <h2 className = "signupStatus">{signupStatus}</h2>
+            </div> 
         </Modal>
     )
 }

@@ -23,7 +23,7 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
     const handleNewComment = (event) => {
         event.preventDefault()
         let date = new Date()
-        let today = new date.toLocaleDateString()
+        let today = date.toLocaleString()
         Axios.post("http://localhost:3001/insertNewComment", {
             username: yourUsername,
             searchedUsername: searchedUsername,

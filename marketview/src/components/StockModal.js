@@ -8,28 +8,35 @@ Modal.setAppElement('#root')
 
 function StockModal({ xValues, yValues, showStockModal, 
                     setShowStockModal, tickerSymbol, purpose,
-                    username, tickerSymbolList, setTickerSymbolList }) {
+                    username, rootUsername, tickerSymbolList, setTickerSymbolList }) {
 
     const customStyles = {
-        overlay : {
-            backgroundColor: 'grey'
-        },
         content : {
           top: '50%',
           left: '50%',
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
-          transform: 'translate(-50%, -50%)'
+          transform: 'translate(-50%, -50%)',
+          height: '650px',
+          width: '900px'
         }
       }
     
     const addStock = () => {
-        Axios.post("http://localhost:3001/addStock", {
-            username: username,
+        if (purpose === 'social') {
+            Axios.post("http://localhost:3001/addStock", {
+            username: rootUsername,
             tickerSymbol: tickerSymbol
         })
         setShowStockModal(false)
+        } else {
+            Axios.post("http://localhost:3001/addStock", {
+                username: username,
+                tickerSymbol: tickerSymbol
+            })
+            setShowStockModal(false)
+        }
     }
 
     const deleteStock = () => {
@@ -73,7 +80,7 @@ function StockModal({ xValues, yValues, showStockModal,
                 style = {customStyles}
                 fade ={false}
             >
-                
+                <div className = "plotContainer">
                 <Plot
                     data = {[
                         {
@@ -90,6 +97,7 @@ function StockModal({ xValues, yValues, showStockModal,
                     onClick = {() => setShowStockModal(false)}
                     className = {"closeModalButton"}>Close Stock Information
                 </button>
+                </div>
                 {addOrRemoveButton()}
             </Modal>
         </div>
