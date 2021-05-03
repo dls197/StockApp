@@ -127,7 +127,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
     )
 }
 
-function convert(timeStamp) {
+export const convert = (timeStamp) => {
     // Convert timestamp to milliseconds
     var date = new Date(timeStamp*1000)
 
@@ -146,7 +146,7 @@ function convert(timeStamp) {
     // Minutes
     var minutes = "0" + date.getMinutes()
 
-    // Display date time in MM-dd-yyyy h:m:s format
+    // Display date time in xM/xd/yyyy xh:mm:am/pm format
     var convdataTime
     if (hours > 12) {
         hours -= 12;
