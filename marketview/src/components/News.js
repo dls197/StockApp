@@ -155,6 +155,10 @@ export const convert = (timeStamp) => {
     else if (hours === 12) {
         convdataTime = month+'/'+day+'/'+year+' '+hours + ':' + minutes.substr(-2) + 'pm'
     }
+    else if (hours === 0) {
+        hours += 12;
+        convdataTime = month+'/'+day+'/'+year+' '+hours + ':' + minutes.substr(-2) + 'am'
+    }
     else {
         convdataTime = month+'/'+day+'/'+year+' '+hours + ':' + minutes.substr(-2) + 'am'
     }
