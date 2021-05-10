@@ -43,7 +43,7 @@ from any page by pressing the "log out" button in the top right of the screen.
 
 On the Home page you can:
     1. View the current Dow Jones and NASDAQ
-    2. Email our team if you need help! The contact email is in the bottom left of the screen
+    2. Email our team if you need help! The contact email is in the bottom right of the screen
     3. View a short synopsis of the app's features
 
 On the News page you can:

@@ -31,21 +31,22 @@ function Stocks({ username, setUsername, setPassword,
             setLoginStatus = {setLoginStatus} 
             />
             <Navbar />
-                <div className = {"searchContainer"}>
-                    <form onSubmit = {handleSubmit}>
-                        <div className = {"inputBox"}>
-                        <input
-                            type = "text"
-                            value = {searchTerm}
-                            placeholder = "Enter a Stock Ticker"
-                            onChange = {(event) => {
-                                setSearchTerm(event.target.value)
-                            }}
-                        />
-                        <input type = "submit" className = {"submitButton"}/>
-                        </div>
-                    </form>
-                </div>
+            <div className = {"searchContainer"}>
+                <form onSubmit = {handleSubmit}>
+                    <div className = {"inputBox"}>
+                    <input
+                        type = "text"
+                        title = "tickerSearch"
+                        value = {searchTerm}
+                        placeholder = "Enter a Stock Ticker"
+                        onChange = {(event) => {
+                            setSearchTerm(event.target.value)
+                        }}
+                    />
+                    <input type = "submit" className = {"submitButton"}/>
+                    </div>
+                </form>
+            </div>
             <StockModal
                 xValues = {xValues}
                 yValues = {yValues}

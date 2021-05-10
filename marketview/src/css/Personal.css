@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: #F2DD0C;
+    border: 10px solid black;
     width: 100%;
     height: 90%;
 }
@@ -120,3 +121,4 @@ h5 {
     font-weight: bold;
     font-size: 15px;
 }
+
