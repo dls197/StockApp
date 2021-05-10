@@ -55,7 +55,7 @@ function Personal({ username }) {
                 <h1>Your Info</h1>
             </div>
             <div className = "folderButtonContainer2">
-            <p id = "currentFullName">Your Full Name: {fullName}</p>
+            <p id = "currentFullName" title = "newFullName">Your Full Name: {fullName}</p>
             {/*submit sends the new info to the database*/}
             <form onSubmit = {(event) => handleNameChange(event)}>
                 <div className = "inputPair">  
@@ -70,17 +70,19 @@ function Personal({ username }) {
                         }}
                     />
                     <input
+                        title = "nameSubmit"
                         type = "submit"
                         id = "submit8"
                     />
                 </div> 
             </form>
-            <p id = "currentBio">Your Bio: {bio}</p>
+            <p id = "currentBio" title = "newBio">Your Bio: {bio}</p>
             <form onSubmit = {handleBioChange}>
                 <div className = "inputPair">  
                     <input
                         id = "change13" 
                         type = "text"
+                        title = "changeBio"
                         value = {newBio}
                         placeholder = "Change Bio to..."
                         onChange = {(event) => {
@@ -88,6 +90,7 @@ function Personal({ username }) {
                         }}
                     />
                     <input
+                        title = "bioSubmit"
                         type = "submit"
                         id = "submit9"
                     />

@@ -21,7 +21,7 @@ function CommentsDisplay({ username }) {
     }, [])
 
     return (
-        <div className = "folderContainer">
+        <div className = "folderContainer" title = "comments">
             <div className = "headingContainer2">
                 <h1>Comments</h1>
             </div>
