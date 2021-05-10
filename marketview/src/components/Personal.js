@@ -62,6 +62,7 @@ function Personal({ username }) {
                     <input
                         id = "change12" 
                         type = "text"
+                        title = "changeFullName"
                         value = {newFullName}
                         placeholder = "Change Full Name to..."
                         onChange = {(event) => {
@@ -74,7 +75,7 @@ function Personal({ username }) {
                     />
                 </div> 
             </form>
-            <p id = "currentBio">Your Bio: <h5>{bio}</h5></p>
+            <p id = "currentBio">Your Bio: {bio}</p>
             <form onSubmit = {handleBioChange}>
                 <div className = "inputPair">  
                     <input
