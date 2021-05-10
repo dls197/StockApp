@@ -43,7 +43,7 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
     }
     
     return (
-        <div className = "bigContainer3">
+        <div className = "bigContainer3" title = "otherComments">
             <div className = "headingContainer6">
                 <h1>Comments</h1>
             </div>
@@ -58,12 +58,13 @@ function OtherUserCommentsDisplay({ yourUsername, searchedUsername }) {
                 <form onSubmit = {(event) => handleNewComment(event)}>
                     <div className = "theBigDiv5">
                     <input
+                        title = "otherCommentsInput"
                         id = "leaveComment" 
                         type = "text" value = {newComment} 
                         placeholder = "Leave a comment..." 
                         onChange = {(event) => {setNewComment(event.target.value)}} 
                     />
-                    <input id = "submit69" type = "submit" />
+                    <input id = "submit69" type = "submit" title = "otherCommentsSubmit"/>
                     </div>
                 </form>
             </div>
