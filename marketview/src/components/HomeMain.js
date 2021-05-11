@@ -5,7 +5,7 @@ function HomeMain( { dowX, dowY, nasdaqX, nasdaqY } ) {
     const mostRecentDow = dowY[0];
     const mostRecentNasdaq = nasdaqY[0];
     return(
-        <div className="home-content">
+        <div className="home-content" title = "homeContent">
             <div className="guide">
                 <ul>
                     <li><span className="list-header">News: </span>Check out the latest stock news!</li>

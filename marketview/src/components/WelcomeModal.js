@@ -26,15 +26,15 @@ function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal
                 isOpen = {showWelcomeModal}
                 shouldCloseOnOverlayClick = {false}
                 style = {customStyles}>
-            <div id = "welcomeSign">
+            <div id = "welcomeSign" title = "welcoming">
                 <h1>Welcome to MarketView!</h1>
             </div>
-            <button id = {"button1"} onClick = {() => {
+            <button id = {"button1"} title = "loginButton" onClick = {() => {
                     setShowWelcomeModal(false)
                     setShowLoginModal(true)
                 }}>Log In
             </button>
-            <button id = {"button2"} onClick = {() => {
+            <button id = {"button2"} title = "signupButton" onClick = {() => {
                     setShowWelcomeModal(false)
                     setShowSignupModal(true)
                 }}>Sign Up

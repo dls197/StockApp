@@ -158,12 +158,12 @@ function StockFolder({ username, rootUsername, fetchStock, xValues,
     } 
     else { //stock folder is private, but someone else is viewing it from the social page
         return (
-            <div className = "folderContainer">
+            <div className = "folderContainer" title = "stockFolder">
                 <div className = "headingContainer">
                     <h1>Stock Folder</h1>
                 </div>
                 <div className = "folderButtonContainer">
-                    <h4>{username}'s Stock Folder is Private</h4>
+                    <h4 title = "privateFolder">{username}'s Stock Folder is Private</h4>
                 </div>
             </div>
         )

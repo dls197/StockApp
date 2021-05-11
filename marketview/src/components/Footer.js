@@ -7,7 +7,7 @@ function Footer() {
 
     // 4.) Define what html this component will return using jsx
     return (
-        <div className="footer">
+        <div className="footer" title = "footer">
             <span>Need Help? Email <a href="mailto:marketviewhelp@gmail.com">marketviewhelp@gmail.com</a></span>
         </div>
     )

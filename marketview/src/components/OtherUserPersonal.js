@@ -27,7 +27,7 @@ function OtherUserPersonal({ searchedUsername }) {
     })
 
     return (
-        <div className = "searchedUserNameBioContainer">
+        <div className = "searchedUserNameBioContainer" title = "otherUserBio">
             <h1>User Profile: {searchedUsername} ({searchedUserFullName})</h1>
             <h3>{searchedUsername}'s Bio: {searchedUserBio}</h3>
         </div>

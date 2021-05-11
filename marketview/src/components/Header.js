@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import logo from './../images/marketviewlogo.png'
 
 function Header({ title, username, setUsername, setPassword, setShowWelcomeModal, setLoginStatus}) {
@@ -26,19 +26,21 @@ function Header({ title, username, setUsername, setPassword, setShowWelcomeModal
       }
 
     return (
-        <div className = {"headerContainer"}>
-            <Link style= {logoStyle} to = "/">
-                <img src={logo} alt="MarketViewLogo"/>
-            </Link>
-            <Link style = {headerTextStyle} to = "/">
-                <h1 className = {"headerTitle"}>{title}</h1>
-            </Link>
-            <Link style = {navStyle} to = "/">
-            <button className = {"logOutButton"} onClick = {() => logOut()}>Log Out</button>
-            </Link>
-            <Link style = {headerTextStyle} to = "/">
-            <h5 className ={"loggedInMessage"}>Logged In: {username}</h5>
-            </Link>
+        <div className = {"headerContainer"} title = "header">
+            <Router>
+                <Link style= {logoStyle} to = "/">
+                    <img src={logo} alt="MarketViewLogo"/>
+                </Link>
+                <Link style = {headerTextStyle} to = "/">
+                    <h1 className = {"headerTitle"}>{title}</h1>
+                </Link>
+                <Link style = {navStyle} to = "/">
+                <button className = {"logOutButton"} title = "logoutButton" onClick = {() => logOut()}>Log Out</button>
+                </Link>
+                <Link style = {headerTextStyle} to = "/">
+                <h5 className ={"loggedInMessage"} title = "currentUser">Logged In: {username}</h5>
+                </Link>
+            </Router>
         </div>
     )
 }
