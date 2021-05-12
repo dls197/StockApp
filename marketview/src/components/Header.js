@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
 import logo from './../images/marketviewlogo.png'
 
 function Header({ title, username, setUsername, 
@@ -30,20 +29,10 @@ function Header({ title, username, setUsername,
 
     return (
         <div className = {"headerContainer"} title = "header">
-            <Router>
-                <Link style= {logoStyle} to = "/">
-                    <img src={logo} alt="MarketViewLogo"/>
-                </Link>
-                <Link style = {headerTextStyle} to = "/">
-                    <h1 className = {"headerTitle"}>{title}</h1>
-                </Link>
-                <Link style = {navStyle} to = "/">
-                <button className = {"logOutButton"} title = "logoutButton" onClick = {() => logOut()}>Log Out</button>
-                </Link>
-                <Link style = {headerTextStyle} to = "/">
-                <h5 className ={"loggedInMessage"} title = "currentUser">Logged In: {username}</h5>
-                </Link>
-            </Router>
+            <img src={logo} style= {logoStyle} alt="MarketViewLogo"/>
+            <h1 className = {"headerTitle"} style = {headerTextStyle}>{title}</h1>
+            <a href = "/" ><button style = {navStyle} className = {"logOutButton"} title = "logoutButton" onClick = {logOut}>Log Out</button></a>     
+            <h5 className ={"loggedInMessage"} style = {headerTextStyle} title = "currentUser">Logged In: {username}</h5>
         </div>
     )
 }

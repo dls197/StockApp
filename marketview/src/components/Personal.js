@@ -76,26 +76,28 @@ function Personal({ username }) {
                     />
                 </div> 
             </form>
-            <p id = "currentBio" title = "newBio">Your Bio: {bio}</p>
-            <form onSubmit = {handleBioChange}>
-                <div className = "inputPair">  
-                    <input
-                        id = "change13" 
-                        type = "text"
-                        title = "changeBio"
-                        value = {newBio}
-                        placeholder = "Change Bio to..."
-                        onChange = {(event) => {
-                            setNewBio(event.target.value)
-                        }}
-                    />
-                    <input
-                        title = "bioSubmit"
-                        type = "submit"
-                        id = "submit9"
-                    />
-                </div> 
-            </form>
+            <div className = "BioCenterer">
+                <p className = "currentBio" title = "newBio">Your Bio: {bio}</p>
+                <form onSubmit = {handleBioChange}>
+                    <div className = "inputPair">  
+                        <input
+                            id = "change13" 
+                            type = "text"
+                            title = "changeBio"
+                            value = {newBio}
+                            placeholder = "Change Bio to..."
+                            onChange = {(event) => {
+                                setNewBio(event.target.value)
+                            }}
+                        />
+                        <input
+                            title = "bioSubmit"
+                            type = "submit"
+                            id = "submit9"
+                        />
+                    </div> 
+                </form>
+            </div>
             </div>
         </div>
     )
