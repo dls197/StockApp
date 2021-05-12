@@ -10,7 +10,7 @@ function Stocks({ username, setUsername, setPassword,
                 setShowWelcomeModal, setLoginStatus, 
                 searchTerm, setSearchTerm, xValues,
                 yValues, showStockModal, setShowStockModal,
-                fetchStock }) {
+                fetchStock, setLoginStatus2 }) {
 
     
     //fetch the stock data whenever the form gets submitted
@@ -28,7 +28,8 @@ function Stocks({ username, setUsername, setPassword,
             setUsername = {setUsername}
             setPassword = {setPassword}
             setShowWelcomeModal = {setShowWelcomeModal}
-            setLoginStatus = {setLoginStatus} 
+            setLoginStatus = {setLoginStatus}
+            setLoginStatus2 = {setLoginStatus2}  
             />
             <Navbar />
             <div className = {"searchContainer"}>

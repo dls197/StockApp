@@ -10,7 +10,7 @@ import OtherUserModal from './OtherUserModal'
 function Social({ username, setUsername, setPassword, 
                 setShowWelcomeModal, setLoginStatus, xValues,
                 yValues, showStockModal, setShowStockModal,
-                fetchStock }) {
+                fetchStock, setLoginStatus2 }) {
 
     const [searchedUsername, setSearchedUsername] = useState("")
     const [showOtherUserModal, setShowOtherUserModal] = useState(false)
@@ -44,6 +44,7 @@ function Social({ username, setUsername, setPassword,
             setPassword = {setPassword}
             setShowWelcomeModal = {setShowWelcomeModal}
             setLoginStatus = {setLoginStatus}
+            setLoginStatus2 = {setLoginStatus2} 
             />
             <Navbar />
             <div className = {"searchContainer"}>

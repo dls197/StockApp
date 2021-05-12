@@ -10,7 +10,7 @@ import '../css/MyProfile.css'
 function MyProfile({ username, setUsername, setPassword, 
                     setShowWelcomeModal, setLoginStatus, fetchStock,
                     xValues, yValues, showStockModal,
-                    setShowStockModal }) {
+                    setShowStockModal, setLoginStatus2 }) {
     return (
         <div>
             <Header 
@@ -19,7 +19,8 @@ function MyProfile({ username, setUsername, setPassword,
                 setUsername = {setUsername}
                 setPassword = {setPassword}
                 setShowWelcomeModal = {setShowWelcomeModal}
-                setLoginStatus = {setLoginStatus} 
+                setLoginStatus = {setLoginStatus}
+                setLoginStatus2 = {setLoginStatus2}  
             />
             <Navbar />
             <div className = "profileContainer">

@@ -4,7 +4,9 @@ import Navbar from './Navbar'
 import '../css/News.css'
 
 
-function News({ username, newsData, setUsername, setPassword, setShowWelcomeModal, setLoginStatus }) {
+function News({ username, newsData, setUsername, 
+                setPassword, setShowWelcomeModal, setLoginStatus,
+                setLoginStatus2}) {
     // components of elements in newsData include:
     //.category .datetime .headline .id .image .related .source .summary .url
     const article1 = newsData[0]
@@ -29,6 +31,7 @@ function News({ username, newsData, setUsername, setPassword, setShowWelcomeModa
             setPassword = {setPassword}
             setShowWelcomeModal = {setShowWelcomeModal}
             setLoginStatus = {setLoginStatus}
+            setLoginStatus2 = {setLoginStatus2} 
             />
             <Navbar />
             <div className="articles">

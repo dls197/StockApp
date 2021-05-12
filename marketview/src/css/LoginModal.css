@@ -64,6 +64,16 @@
     font-weight: bold;
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 100px;
+    position: absolute;
+    bottom: 25px;
+    left: 70px;
+}
+
+#loginStatus2 {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 50px;
+    left: 210px;
 }

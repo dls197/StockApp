@@ -6,7 +6,9 @@ import Axios from 'axios'
 
 Modal.setAppElement('#root')
 
-function LoginModal({ username, password, setUsername, setPassword, loginStatus, setLoginStatus, showLoginModal, setShowLoginModal, setShowSignupModal }) {
+function LoginModal({ username, password, setUsername, setPassword,
+                      loginStatus, loginStatus2, setLoginStatus, showLoginModal, 
+                      setShowLoginModal, setShowSignupModal }) {
 
     const customStyles = {
       content : {
@@ -68,6 +70,7 @@ function LoginModal({ username, password, setUsername, setPassword, loginStatus,
                     }}> Go To Signup
             </button>
             <h2 id = "loginStatus">{loginStatus}</h2> 
+            <h2 id = "loginStatus2">{loginStatus2}</h2>
         </Modal>
     )
 }

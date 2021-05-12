@@ -10,10 +10,14 @@ import SignupModal from './SignupModal'
 
 
 
-function Home({ loginStatus, setLoginStatus, username, password, setUsername, setPassword,
-     showWelcomeModal, setShowWelcomeModal, dowX, dowY, nasdaqX, nasdaqY }) {
+function Home({ loginStatus, loginStatus2, setLoginStatus,
+                setLoginStatus2, username, 
+                password, setUsername, setPassword,
+                showWelcomeModal, setShowWelcomeModal, dowX, 
+                dowY, nasdaqX, nasdaqY }) {
     const [showLoginModal, setShowLoginModal] = useState(false)
     const [showSignupModal, setShowSignupModal] = useState(false)
+    
 
     return (
         <div className="home-container">
@@ -32,6 +36,7 @@ function Home({ loginStatus, setLoginStatus, username, password, setUsername, se
                 setUsername = {setUsername}
                 setPassword = {setPassword}
                 loginStatus = {loginStatus}
+                loginStatus2 = {loginStatus2}
                 setLoginStatus = {setLoginStatus}
             />
             <SignupModal
@@ -45,7 +50,8 @@ function Home({ loginStatus, setLoginStatus, username, password, setUsername, se
             />
             <Header 
                 title = "Home"
-                setLoginStatus = {setLoginStatus} 
+                setLoginStatus = {setLoginStatus}
+                setLoginStatus2 = {setLoginStatus2} 
                 username = {username} 
                 setUsername = {setUsername}
                 setPassword = {setPassword} 

@@ -2,7 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import logo from './../images/marketviewlogo.png'
 
-function Header({ title, username, setUsername, setPassword, setShowWelcomeModal, setLoginStatus}) {
+function Header({ title, username, setUsername, 
+                  setPassword, setShowWelcomeModal, setLoginStatus,
+                  setLoginStatus2}) {
 
     const navStyle = {
         color: 'black'
@@ -22,7 +24,8 @@ function Header({ title, username, setUsername, setPassword, setShowWelcomeModal
         setUsername("")
         setPassword("")
         setShowWelcomeModal(true)
-        setLoginStatus("You are Logged Out")
+        setLoginStatus("")
+        setLoginStatus2("You are Logged Out")
       }
 
     return (

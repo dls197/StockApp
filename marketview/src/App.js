@@ -11,10 +11,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 function App() {
   const finnhubApiKey = process.env.REACT_APP_FINNHUB_API_KEY;
   const [loginStatus, setLoginStatus] = useState("")
+  const [loginStatus2, setLoginStatus2] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [newsData, setNewsData] = useState([]) //variable to store newsData
-  const [showWelcomeModal, setShowWelcomeModal] = useState(false)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true)
   const [searchTerm, setSearchTerm] = useState("") //the ticker symbol they search for
   const [xValues, setXValues] = useState([]) //dates fetched from api
   const [yValues, setYValues] = useState([]) //prices fetched from api
@@ -114,6 +115,8 @@ function App() {
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   loginStatus = {loginStatus}
+                                  loginStatus2 = {loginStatus2}
+                                  setLoginStatus2 = {setLoginStatus2}
                                   setLoginStatus = {setLoginStatus}
                                   showWelcomeModal = {showWelcomeModal}
                                   setShowWelcomeModal = {setShowWelcomeModal} 
@@ -132,7 +135,8 @@ function App() {
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
-                                  setLoginStatus = {setLoginStatus} 
+                                  setLoginStatus = {setLoginStatus}
+                                  setLoginStatus2 = {setLoginStatus2}
                                 />}
           />
           <Route 
@@ -144,6 +148,7 @@ function App() {
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
                                   setLoginStatus = {setLoginStatus}
+                                  setLoginStatus2 = {setLoginStatus2}
                                   searchTerm = {searchTerm}
                                   setSearchTerm = {setSearchTerm}
                                   xValues = {xValues}
@@ -162,6 +167,7 @@ function App() {
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
                                   setLoginStatus = {setLoginStatus}
+                                  setLoginStatus2 = {setLoginStatus2}
                                   fetchStock = {fetchStock}
                                   xValues = {xValues}
                                   yValues = {yValues}
@@ -178,6 +184,7 @@ function App() {
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
                                   setLoginStatus = {setLoginStatus}
+                                  setLoginStatus2 = {setLoginStatus2}
                                   xValues = {xValues}
                                   yValues = {yValues}
                                   showStockModal = {showStockModal}
