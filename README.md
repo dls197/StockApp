@@ -1,7 +1,7 @@
 # Welcome to MarketView!
 
 This document contains written tutorials for installing and using MarketView, as well as some advanced debugging operations.
-There are also links to the development documents for MarketView, which are avalible to those with permission for our Classic version,
+There are also links to the development documents for MarketView, which are available to those with permission for our Classic version,
 namely all holders of a CWRU account
 
 Sections:
@@ -114,8 +114,8 @@ When you first open the app, you will be prompted to sign up or log in. If you d
 ### On the Social page you can
 
 1. Search for other MarketView users
-    - a. Upon searching for a (valid) MarketView username, thier profile will pop up
-        - If they have a public stock folder, you can view the ticker symbols in it. You can click on the ticker symbols to see their information grpahically
+    - a. Upon searching for a (valid) MarketView username, theirr profile will pop up
+        - If they have a public stock folder, you can view the ticker symbols in it. You can click on the ticker symbols to see their information graphically
     - You can see what others had to say about this user's profile based on the Comments section. To leave a new comment of your own, just enter the comment in the text field and hit submit! Note: the date/time of your comment will be recorded, and it will be linked to your username
     - You can see the user's full name and bio at the top of the popup screen
 
