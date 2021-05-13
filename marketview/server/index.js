@@ -8,6 +8,8 @@ const mysql = require('mysql')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -24,9 +26,11 @@ app.post('/signup', (req, res) => {
     const username = req.body.username
     const password = req.body.password
 
+    const hash = bcrypt.hashSync(password, saltRounds)
+
     database.query(
         "INSERT INTO users (username, password) VALUES (?,?)",
-        [username, password], 
+        [username, hash], 
         (err, result) => {
             if (err) {
                 res.send({message: "Signup Failed"})
@@ -41,17 +45,21 @@ app.post('/signup', (req, res) => {
 app.post('/login', (req, res) => {
     const username = req.body.username
     const password = req.body.password
-
+    
     database.query(
-        "SELECT * FROM users WHERE username = ? AND password = ?",
-        [username, password], 
+        "SELECT password FROM users WHERE username = ?",
+        username, 
         (err, result) => {
+            console.log(result[0].password)
+            console.log("The result is " + bcrypt.compareSync(password, result[0].password))
             if (err) {
-            res.send({err: err})
+                console.log(err)
+                res.send({err: err})
             }
-            if (result.length > 0) {
+            if (bcrypt.compareSync(password, result[0].password)) {
                 res.send(result)
             } else {
+                console.log(result)
                 res.send({message: "You entered the wrong username/password combination!"})
             }
         }
