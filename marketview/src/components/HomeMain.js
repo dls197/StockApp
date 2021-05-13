@@ -2,8 +2,8 @@ import React from 'react'
 import Plot from 'react-plotly.js'
 
 function HomeMain( { dowX, dowY, nasdaqX, nasdaqY } ) {
-    const mostRecentDow = dowY[0];
-    const mostRecentNasdaq = nasdaqY[0];
+    const mostRecentDow = Math.round(dowY[0]);
+    const mostRecentNasdaq = Math.round(nasdaqY[0]);
     return(
         <div className="home-content" title = "homeContent">
             <div className="guide">
