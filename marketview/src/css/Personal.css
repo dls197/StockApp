@@ -28,19 +28,30 @@
     text-decoration: underline;
     font-weight: bold;
     font-size: 23px;
+    max-width: 350px;
+    overflow: auto;
 }
 
-#currentBio {
+.BioCenterer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 225px;
+    width: 400px;
+}
+.currentBio {
     position: relative;
-    left: 45px;
-    font-weight: bold;
+    right: -32px;
     font-size: 23px;
+    max-width: 370px;
+    max-height: 100px;
+    overflow:auto;
 }
 
 #currentBio h5 {
     position: relative;
     top: 3px;
-    right: 40px;
+    right: 40px; 
 }
 
 .inputPair {
@@ -71,8 +82,8 @@
 
 #change13 {
     height: 36px;
-    margin-bottom: 20px;
-    width: 100%;
+    margin-bottom: 0px;
+    width: 193px;
     padding: 16px;
     font-size: 36 px;
     font-style: italic;
@@ -80,8 +91,9 @@
     outline: none;
     border-radius: 14px;
     background-color: rgb(238, 234, 234);
-    position: relative;
-    bottom: 24px;
+    position: absolute;
+    bottom: 290px;
+    right: 225px;
 }
 
 #submit8 {
@@ -108,8 +120,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    left: 50px;
+    position: absolute;
+    bottom: 200px;
+    right: 270px;
 }
 
 #submit9:hover {
