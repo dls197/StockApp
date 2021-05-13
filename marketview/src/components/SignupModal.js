@@ -51,7 +51,7 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
             />
             <input
                 id = "input4" 
-                type = "text"
+                type = "password"
                 placeholder = "Password..."
                 value = {password}
                 onChange = {(event) => {

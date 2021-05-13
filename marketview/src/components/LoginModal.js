@@ -56,7 +56,7 @@ function LoginModal({ username, password, setUsername, setPassword,
             />
             <input
                 id = "input2" 
-                type = "text"
+                type = "password"
                 value = {password}
                 placeholder = "Password..."
                 onChange = {(event) => {
