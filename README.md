@@ -52,7 +52,8 @@ then do the following:
 1. Create a `.env` file in the marketview folder and input `REACT_APP_FINNHUB_API_KEY=c1se9aqad3i9o8uaclc0`, save and exit
 2. In a terminal while in the marketview folder, run `npm install`
 3. Setup the MySQL database by doing `cd database` then run `mysql -u root -p < marketview.sql`, include your MySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
-4. Navigate back to the marketview folder and run `npm start` to open up the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
+4. Navigate to `index.js` in the `server` folder and change line 19 to be the password of your local MySQL root user password
+5. Navigate back to the marketview folder and run `npm start` to open up the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
