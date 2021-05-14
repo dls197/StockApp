@@ -39,6 +39,7 @@ function WelcomeModal({ showWelcomeModal, setShowWelcomeModal, setShowLoginModal
                     setShowSignupModal(true)
                 }}>Sign Up
             </button> 
+            <button id = "button8" onClick = {() => {setShowWelcomeModal(false)}}>Continue without Logging in [Limited Functionality]</button>
         </Modal>
     )
 }

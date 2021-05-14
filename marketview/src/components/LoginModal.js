@@ -69,6 +69,7 @@ function LoginModal({ username, password, setUsername, setPassword,
                     setShowSignupModal(true)
                     }}> Go To Signup
             </button>
+            <button id = "button9" onClick = {() => {setShowLoginModal(false)}}>Continue without Logging in [Limited Functionality]</button>
             <h2 id = "loginStatus">{loginStatus}</h2> 
             <h2 id = "loginStatus2">{loginStatus2}</h2>
         </Modal>

@@ -65,6 +65,7 @@ function SignupModal({ showSignupModal, setShowLoginModal, setShowSignupModal, u
                     setSignupStatus("")
                     }}> Go To Login
             </button>
+            <button id = "button7" onClick = {() => {setShowSignupModal(false)}}>Continue without Logging in [Limited Functionality]</button>
             <div className = "signupCenterer">
                 <h2 className = "signupStatus">{signupStatus}</h2>
             </div> 

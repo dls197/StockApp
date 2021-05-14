@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from './Header'
 import Navbar from './Navbar'
 import '../css/News.css'
 
 
-function News({ username, newsData, setUsername, 
+function News({ username, newsData, setNewsData, setUsername, 
                 setPassword, setShowWelcomeModal, setLoginStatus,
                 setLoginStatus2}) {
+    const finnhubApiKey = process.env.REACT_APP_FINNHUB_API_KEY;
+
+    const getNewsData = async () => {
+        await fetch(`https://finnhub.io/api/v1/news?category=general&token=${finnhubApiKey}`)
+                .then(Response => Response.json())
+                .then(data => setNewsData(data))
+    }
+    useEffect(() => {
+        getNewsData()
+    }, [])
+
     // components of elements in newsData include:
     //.category .datetime .headline .id .image .related .source .summary .url
     const article1 = newsData[0]

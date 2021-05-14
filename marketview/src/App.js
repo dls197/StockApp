@@ -132,6 +132,7 @@ function App() {
                                   {...props}                        
                                   username = {username} 
                                   newsData = {newsData}
+                                  setNewsData = {setNewsData}
                                   setUsername = {setUsername}
                                   setPassword = {setPassword}
                                   setShowWelcomeModal = {setShowWelcomeModal}
