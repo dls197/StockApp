@@ -7,7 +7,7 @@ namely all holders of a CWRU account
 Sections:
 
 - I. INSTALLATION
-  - mySQL
+  - MySQL
   - Setup
 - II. OPERATION
   - Home
@@ -30,16 +30,16 @@ Sections:
 To get the app to run properly, you will need to install react at https://reactjs.org/
 then do the following:
 
-### Install mySQL and mySQL Workbench at https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
+### Install MySQL and MySQL Workbench at https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
 
 1. Set up your new connection, and don't worry about what port you're on (Just make sure it is NOT 3001)
 2. Copy & paste the contents of `marketview.sql` into a query window (it's usually called Query1)
-3. If you ever open up mySQL Workbench and you can't use your connection, open your task manager, then go to services Look for something along the lines of `MySQL80`, or some other number. Right click on it and click `start` The connection should be working now.
+3. If you ever open up MySQL Workbench and you can't use your connection, open your task manager, then go to services Look for something along the lines of `MySQL80`, or some other number. Right click on it and click `start` The connection should be working now.
 4. To view a table's contents, just right click on it on the dropdown menu on the left, then click `select rows - limit 1000` you can then directly change the contents of the table on the bottom of the screen (remember to click `apply`)
 
 ### Setup and Launch
 
-1. Run `setup.py` in the marketview folder, include your mySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
+1. Run `setup.py` in the marketview folder, include your MySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
 2. Run `startServer.py`, this launches the server used for the database
 3. Run `startApp.py`, this should launch the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
 
