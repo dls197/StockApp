@@ -106,7 +106,7 @@ When you first open the app, you will be prompted to sign up or log in. If you d
 
 ### In order to recreate the MySQL Database from the .sql file in this directory:
 
-1. Run `setup.py` (this is done in the Installation)
+1. Refer to Setup and Launch in the Installation section
 
 ### In order to update the MySQL Database from the .sql file in this directory to reflect local changes you made on your machine follow these steps:
 
