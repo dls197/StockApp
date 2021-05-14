@@ -7,9 +7,8 @@ namely all holders of a CWRU account
 Sections:
 
 - I. INSTALLATION
-  - Front-end
-  - Back-end
   - mySQL
+  - Setup
 - II. OPERATION
   - Home
   - News
@@ -31,48 +30,18 @@ Sections:
 To get the app to run properly, you will need to install react at https://reactjs.org/
 then do the following:
 
-### Front-end npm installs
-
-1. Make a file called `.env` inside of the `marketview` folder, and put this in the .env file 
-
-    ```
-	REACT_APP_FINNHUB_API_KEY=c1se9aqad3i9o8uaclc0
-    ```
-
-2. In TERMINAL, cd to the `marketview` folder, then type
-   
-	```
-    npm install axios
-	npm install finnhub --save
-	npm install plotly.js-dist
-	npm install --save react-modal
-	npm install --save react-router-dom
-    ```
-
-### Back-end npm installs
-
-1. In TERMINAL, cd to the `server` folder, then type 
-
-    ```
-	npm install body-parser
-	npm install cors
-	npm install express
-	npm install mysql
-	npm install nodemon 
-    ```
-
-2. To start the server type
-
-    ```
-	npm run devStart 
-    ```
-
 ### Install mySQL and mySQL Workbench at https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
 
 1. Set up your new connection, and don't worry about what port you're on (Just make sure it is NOT 3001)
 2. Copy & paste the contents of `marketview.sql` into a query window (it's usually called Query1)
 3. If you ever open up mySQL Workbench and you can't use your connection, open your task manager, then go to services Look for something along the lines of `MySQL80`, or some other number. Right click on it and click `start` The connection should be working now.
 4. To view a table's contents, just right click on it on the dropdown menu on the left, then click `select rows - limit 1000` you can then directly change the contents of the table on the bottom of the screen (remember to click `apply`)
+
+### Setup and Launch
+
+1. Run `setup.py` in the marketview folder, include your mySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
+2. Run `startServer.py`, this launches the server used for the database
+3. Run `startApp.py`, this should launch the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -123,11 +92,9 @@ When you first open the app, you will be prompted to sign up or log in. If you d
 
 ## III. DATABASE RECREATION
 
-### In order to recreate the MySQL Database from the .sql file in this directory on your machine follow these steps:
+### In order to recreate the MySQL Database from the .sql file in this directory:
 
-1. Open a terminal and change directory to the directory this file is in
-2. Run the following command: `mysql -u root -p < marketview.sql`
-3. You will be prompted to enter a password, enter the password that you used for root when setting up MySQL on your machine
+1. Run `setup.py` (this is done in the Installation)
 
 ### In order to update the MySQL Database from the .sql file in this directory to reflect local changes you made on your machine follow these steps:
 
