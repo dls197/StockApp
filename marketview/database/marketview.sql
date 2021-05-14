@@ -34,7 +34,7 @@ CREATE TABLE `comments` (
   `username` varchar(255) NOT NULL,
   `comment` varchar(255) NOT NULL,
   `date_time` varchar(255) DEFAULT NULL,
-  'commenter_username' varchar(255) DEFAULT NULL,
+  `commenter_username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`username`,`comment`),
   CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
