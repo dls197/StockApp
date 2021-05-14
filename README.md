@@ -9,6 +9,8 @@ Sections:
 - I. INSTALLATION
   - MySQL
   - Setup
+    - Quick Setup (Python Required)
+    - Manual Setup
 - II. OPERATION
   - Home
   - News
@@ -39,9 +41,18 @@ then do the following:
 
 ### Setup and Launch
 
+#### Quick Setup (Python Required)
+
 1. Run `setup.py` in the marketview folder, include your MySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
 2. Run `startServer.py`, this launches the server used for the database
 3. Run `startApp.py`, this should launch the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
+
+#### Manual Setup
+
+1. Create a `.env` file in the marketview folder and input `REACT_APP_FINNHUB_API_KEY=c1se9aqad3i9o8uaclc0`, save and exit
+2. In a terminal while in the marketview folder, run `npm install`
+3. Setup the MySQL database by doing `cd database` then run `mysql -u root -p < marketview.sql`, include your MySQL password when prompted, this is the password that you used for root when setting up MySQL on your machine
+4. Navigate back to the marketview folder and run `npm start` to open up the marketview website in your web browser, for full functionality the user should login with a valid username and password or sign up for an account and use that account
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
