@@ -50,8 +50,8 @@ app.post('/login', (req, res) => {
         "SELECT password FROM users WHERE username = ?",
         username, 
         (err, result) => {
-            console.log(result[0].password)
-            console.log("The result is " + bcrypt.compareSync(password, result[0].password))
+            //console.log(result[0].password)
+            //console.log("The result is " + bcrypt.compareSync(password, result[0].password))
             if (err) {
                 console.log(err)
                 res.send({err: err})
